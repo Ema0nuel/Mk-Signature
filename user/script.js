@@ -77,7 +77,6 @@ signUpForm.addEventListener("submit", (e) => {
       const userData = {
         firstName: signUpName.value,
         lastName: signUpLName.value,
-        dob: dob.value,
         phone: signUpPhone.value,
         orderDate: [],
         orderRef: [],
