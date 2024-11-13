@@ -30,6 +30,13 @@
     />
     <!-- StyleSheet -->
 
+    <!-- Notification Message -->
+    <!-- SuccessIcon -->
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
+
     <!-- Bootstrap -->
     <link rel="stylesheet" href="css/bootstrap.css" />
     <!-- Magnific Popup -->
@@ -180,36 +187,36 @@
                   <h4>Get in touch</h4>
                   <h3>Write us a message</h3>
                 </div>
-                <form class="form" method="post" action="mail/mail.php">
+                <form class="form js-contact-form" method="post" name="contact-form">
                   <div class="row">
                     <div class="col-lg-6 col-12">
                       <div class="form-group">
                         <label>Your Name<span>*</span></label>
-                        <input name="name" type="text" placeholder="" />
+                        <input name="cName" type="text" placeholder="John Doe"  required/>
                       </div>
                     </div>
                     <div class="col-lg-6 col-12">
                       <div class="form-group">
                         <label>Your Subjects<span>*</span></label>
-                        <input name="subject" type="text" placeholder="" />
+                        <input name="cSubject" type="text" placeholder="Title"  required/>
                       </div>
                     </div>
                     <div class="col-lg-6 col-12">
                       <div class="form-group">
                         <label>Your Email<span>*</span></label>
-                        <input name="email" type="email" placeholder="" />
+                        <input name="cEmail" type="email" placeholder="example@email.com"  required/>
                       </div>
                     </div>
                     <div class="col-lg-6 col-12">
                       <div class="form-group">
                         <label>Your Phone<span>*</span></label>
-                        <input name="company_name" type="text" placeholder="" />
+                        <input name="cPhone" type="number" placeholder="+1234567890"  required/>
                       </div>
                     </div>
                     <div class="col-12">
                       <div class="form-group message">
-                        <label>your message<span>*</span></label>
-                        <textarea name="message" placeholder=""></textarea>
+                        <label>Your message<span>*</span></label>
+                        <textarea name="cMessage" placeholder="This is a message" required></textarea>
                       </div>
                     </div>
                     <div class="col-12">
@@ -279,18 +286,16 @@
                   first purchase
                 </p>
                 <form
-                  action="mail/mail.php"
-                  method="get"
-                  target="_blank"
-                  class="newsletter-inner"
+                  method="post"
+                  class="newsletter-inner js-newsletter"
                 >
                   <input
                     name="EMAIL"
                     placeholder="Your email address"
-                    required=""
+                    required
                     type="email"
                   />
-                  <button class="btn">Subscribe</button>
+                  <button type="submit" class="btn">Subscribe</button>
                 </form>
               </div>
               <!-- End Newsletter Inner -->
@@ -300,6 +305,8 @@
       </div>
     </section>
     <!-- End Shop Newsletter -->
+
+    <div class="absolute-div js-absolute hidden"></div>
 
     <!-- Start Footer Area -->
     <footer class="footer">
@@ -439,5 +446,7 @@
     <script src="./js/easing.js"></script>
     <!-- Active JS -->
     <script src="./js/active.js"></script>
+    <!-- Contact Us -->
+     <script type="module" src="./script/contact.js"></script>
   </body>
 </html>

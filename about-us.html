@@ -30,6 +30,13 @@
     />
     <!-- StyleSheet -->
 
+    <!-- Notification Message -->
+    <!-- SuccessIcon -->
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
+
     <!-- Bootstrap -->
     <link rel="stylesheet" href="css/bootstrap.css" />
     <!-- Magnific Popup -->
@@ -189,7 +196,6 @@
                 get large comfort.
               </p>
               <div class="button">
-                <a href="blog-single-sidebar" class="btn">Our Blog</a>
                 <a href="contact.html" class="btn primary">Contact Us</a>
               </div>
             </div>
@@ -345,7 +351,7 @@
               <div class="info-head">
                 <!-- Info Box -->
                 <div class="info-box">
-                  <h4 class="name"><a >David Zone</a></h4>
+                  <h4 class="name"><a>David Zone</a></h4>
                   <span class="designation">SEO Expert</span>
                 </div>
                 <!-- End Info Box -->
@@ -435,7 +441,9 @@
                   first purchase
                 </p>
                 <form
-                  class="newsletter-inner"
+                  class="newsletter-inner js-newsletter"
+                  method="post"
+                  name="contact-form"
                 >
                   <input
                     name="EMAIL"
@@ -443,7 +451,7 @@
                     required=""
                     type="email"
                   />
-                  <button class="btn">Subscribe</button>
+                  <button type="submit" class="btn">Subscribe</button>
                 </form>
               </div>
               <!-- End Newsletter Inner -->
@@ -453,7 +461,7 @@
       </div>
     </section>
     <!-- End Shop Newsletter -->
-
+    <div class="absolute-div js-absolute hidden"></div>
     <!-- Start Footer Area -->
     <footer class="footer">
       <!-- Footer Top -->
@@ -592,5 +600,6 @@
     <script src="./js/easing.js"></script>
     <!-- Active JS -->
     <script src="./js/active.js"></script>
+    <script type="module" src="./script/about-us.js"></script>
   </body>
 </html>

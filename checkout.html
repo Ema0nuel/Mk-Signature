@@ -51,6 +51,13 @@
     <!-- Slicknav -->
     <link rel="stylesheet" href="css/slicknav.min.css" />
 
+    <!-- Notification Message -->
+    <!-- SuccessIcon -->
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
+
     <!-- mksignature StyleSheet -->
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="style.css" />
@@ -83,6 +90,13 @@
               <!--/ End Logo -->
               <!-- Search Form -->
               <div class="mobile-nav"></div>
+            </div>
+            <div
+              class="user-account js-user"
+              onclick="window.location.href = `./user/index.html`
+            "
+            >
+              <i class="fas fa-user"></i>
             </div>
           </div>
         </div>
@@ -173,9 +187,9 @@
           <div class="col-lg-8 col-12">
             <div class="checkout-form">
               <h2>Make Your Checkout Here</h2>
-              <p>Please register in order to checkout more quickly</p>
+              <p>Please fill out the information in order to check out</p>
               <!-- Form -->
-              <form class="form js-checkout-form">
+              <form class="form" id="js-checkout-form">
                 <div class="row">
                   <div class="col-lg-6 col-md-6 col-12">
                     <div class="form-group">
@@ -217,7 +231,7 @@
                     <div class="form-group">
                       <label>Phone Number<span>*</span></label>
                       <input type="number" name="number" placeholder=""
-                      required" id="number"/>
+                      required id="number"/>
                     </div>
                   </div>
                   <div class="col-lg-6 col-md-6 col-12">
@@ -386,7 +400,7 @@
                         <option value="NZ">New Zealand</option>
                         <option value="NI">Nicaragua</option>
                         <option value="NE">Niger</option>
-                        <option value="NG">Nigeria</option>
+                        <option value="NG" selected="selected">Nigeria</option>
                         <option value="NU">Niue</option>
                         <option value="NF">Norfolk Island</option>
                         <option value="MP">Northern Mariana Islands</option>
@@ -461,8 +475,8 @@
                         <option value="UG">Uganda</option>
                         <option value="UA">Ukraine</option>
                         <option value="AE">United Arab Emirates</option>
-                        <option value="US" selected="selected">
-                          United Kingdom
+                        <option value="US">
+                          United States
                         </option>
                         <option value="UY">Uruguay</option>
                         <option value="UM">U.S. Minor Outlying Islands</option>
@@ -508,10 +522,10 @@
                     <div class="form-group">
                       <label>Postal Code<span></span></label>
                       <input
-                        type="text"
+                        type="number"
                         name="post"
                         placeholder=""
-                        required="required"
+                        required
                         id="post"
                       />
                     </div>
@@ -605,6 +619,8 @@
     </section>
     <!-- End Shop Services -->
 
+    <div class="absolute-div js-absolute hidden"></div>
+
     <!-- Start Footer Area -->
     <footer class="footer">
       <!-- Footer Top -->
@@ -696,8 +712,7 @@
                 <div class="left">
                   <p>
                     Copyright © 2024
-                    <a target="_blank">mksignature</a> - All Rights
-                    Reserved.
+                    <a target="_blank">mksignature</a> - All Rights Reserved.
                   </p>
                 </div>
               </div>
@@ -744,7 +759,8 @@
     <!-- Active JS -->
     <script src="js/active.js"></script>
     <!-- Activate Products -->
-    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <script src="https://js.paystack.co/v2/inline.js"></script>
+    <script type="module" src="./user/checkout.js"></script>
     <script type="module" src="./script/shop/checkout-item.js"></script>
   </body>
 </html>
