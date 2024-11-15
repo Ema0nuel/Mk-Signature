@@ -5399,6 +5399,12 @@ Version:1.0
   flex-direction: row;
   gap: 10px;
 }
+.items-center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 @media (min-aspect-ratio: 16/9) {
   .bg-vid {

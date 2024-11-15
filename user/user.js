@@ -4,6 +4,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebas
 import {
   getAuth,
   onAuthStateChanged,
+  signOut,
 } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
 import {
   getFirestore,
@@ -324,3 +325,15 @@ function generateProducts(orderCart) {
 
   return html;
 }
+
+const signOutBtn = document.getElementById("signOut");
+signOutBtn.addEventListener("click", () => {
+  localStorage.removeItem("loggedShopUser");
+  signOut(auth)
+    .then(() => {
+      window.location.href = "../index.html";
+    })
+    .catch((error) => {
+      console.log("Failed to log out", error);
+    });
+});
