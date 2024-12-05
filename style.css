@@ -5405,6 +5405,9 @@ Version:1.0
   justify-content: center;
   align-items: center;
 }
+.font-semibold{
+  font-weight: 600;
+}
 
 @media (min-aspect-ratio: 16/9) {
   .bg-vid {

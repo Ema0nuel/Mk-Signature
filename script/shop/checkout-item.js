@@ -287,11 +287,11 @@ function payWithPaystack(e) {
       refid = response.reference;
       onAuthStateChanged(auth, (user) => {
         updateData(refid);
+        setTimeout(() => {
+          window.location.href = "./user/user.html";
+        }, 5000)
       });
       localStorage.removeItem("user-cart");
-      setTimeout(() => {
-        window.location.href = "./user/user.html";
-      }, 5000)
     },
   });
 
