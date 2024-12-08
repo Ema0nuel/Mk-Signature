@@ -173,7 +173,7 @@ loginForm.addEventListener("submit", (e) => {
     });
 });
 
-function successMessage(message, messageNote, icon, href = './index.html') {
+function successMessage(message, messageNote, icon, href = "./index.html") {
   let html = `
       <div class="fixed-div">
         <div

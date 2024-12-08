@@ -5408,6 +5408,10 @@ Version:1.0
 .font-semibold{
   font-weight: 600;
 }
+.link-font a i{
+  font-weight: 500;
+  font-size: 20px;
+}
 
 @media (min-aspect-ratio: 16/9) {
   .bg-vid {
