@@ -1,6 +1,7 @@
 import { supabase } from "/assets/function/Data/db.js";
 import { showNotificationToastr } from "/assets/function/Util/notification.js";
 import { formatMoneyAmount } from "/assets/function/Util/format.js";
+import { trackPageVisit } from "/assets/function/Util/analyticsLogger.js";
 
 // Helper: Get current user
 async function getCurrentUser() {
@@ -30,7 +31,7 @@ async function getUserOrders(userId) {
 
 export default async function user(renderPageHTML) {
   window.scrollTo(0, 0);
-
+  trackPageVisit();
   // 1. Check login
   const user = await getCurrentUser();
   if (!user) {

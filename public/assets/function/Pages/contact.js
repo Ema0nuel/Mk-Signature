@@ -1,7 +1,9 @@
 import { showNotification } from "../Util/notification.js";
+import { trackPageVisit } from "/assets/function/Util/analyticsLogger.js";
 
 export default function contact(renderPageHTML) {
   window.scrollTo(0, 0);
+  trackPageVisit({ page: "contact" });
   renderPageHTML.innerHTML = `
     <section id="contact-us" class="contact-us section py-10 bg-gray-50 min-h-screen animate-fade-in-up">
       <div class="max-w-6xl mx-auto px-4">

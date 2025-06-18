@@ -1,4 +1,8 @@
+
+import { trackPageVisit } from "/assets/function/Util/analyticsLogger.js";
 export default async function notfound(renderPageHTML) {
+  window.scrollTo(0, 0);
+  trackPageVisit({ page: "notfound" });
   renderPageHTML.innerHTML = `
     <section class="flex flex-col items-center justify-center min-h-[70vh] bg-gray-50 animate-fade-in-up pb-3">
       <img src="https://horizonridgecu.online/htdocs_error/page_not_found.svg" alt="Page Not Found" class="w-screen h-full mb-6">

@@ -5,6 +5,8 @@ import { showNotificationToastr } from "../Util/notification.js";
 import { supabase } from "../Data/db.js";
 import { payWithPaystack } from "../Shop/payment.js";
 
+import { trackPageVisit } from "/assets/function/Util/analyticsLogger.js";
+
 // Helper: Get current user
 async function getCurrentUser() {
   const { data } = await supabase.auth.getUser();
@@ -59,6 +61,7 @@ async function updateOrder(orderId, updateObj) {
 
 export default async function checkout(renderPageHTML) {
   window.scrollTo(0, 0);
+  trackPageVisit({ page: "checkout" });
 
   // 1. Check login
   const user = await getCurrentUser();

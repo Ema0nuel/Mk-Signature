@@ -8,8 +8,11 @@ import { fetchAllProducts } from "../Shop/ShopFunction.js";
 import { formatMoneyAmount } from "../Util/format.js";
 import { showNotification } from "../Util/notification.js";
 
+import { trackPageVisit } from "/assets/function/Util/analyticsLogger.js";
+
 export default async function cart(renderPageHTML) {
   window.scrollTo(0, 0);
+  trackPageVisit({ page: "cart" });
 
   const allProducts = await fetchAllProducts();
   let cartItems = getCart();

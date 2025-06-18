@@ -1,5 +1,8 @@
+
+import { trackPageVisit } from "/assets/function/Util/analyticsLogger.js";
 export default function privacy(renderPageHTML) {
     window.scrollTo(0, 0);
+    trackPageVisit({ page: "privacy" });
   renderPageHTML.innerHTML = `
     <section class="py-12 bg-gray-50 min-h-screen animate-fade-in-up">
       <div class="max-w-4xl mx-auto px-4">

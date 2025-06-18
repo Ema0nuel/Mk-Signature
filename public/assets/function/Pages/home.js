@@ -5,6 +5,7 @@ import { addToCart } from "../Shop/cart.js";
 import { showNotification } from "../Util/notification.js";
 import { formatMoneyAmount } from "../Util/format.js";
 import { displayView } from "../Shop/modalView.js";
+import { trackPageVisit } from "/assets/function/Util/analyticsLogger.js";
 
 // Use Vite's asset handling for default image
 const defaultImg = new URL('/assets/images/default.png', import.meta.url).href;
@@ -12,6 +13,8 @@ const fallbackImg = new URL('/assets/images/products/armless-braid-hair-1.png', 
 
 export default async function home(renderPageHTML) {
   startPreloader();
+  window.scrollTo(0, 0);
+  trackPageVisit({ page: "home" });
 
   // Fetch products from Supabase
   const { data: products, error } = await supabase

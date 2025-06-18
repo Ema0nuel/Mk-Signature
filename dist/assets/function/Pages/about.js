@@ -1,4 +1,9 @@
+
+import { trackPageVisit } from "/assets/function/Util/analyticsLogger.js";
+
 export default function about(renderPageHTML) {
+  // Track page visit for analytics
+  trackPageVisit({ page: "about" });
     window.scrollTo(0, 0);
   renderPageHTML.innerHTML = `
     <section class="py-12 bg-gray-50 min-h-screen animate-fade-in-up">

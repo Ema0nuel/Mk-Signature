@@ -1,8 +1,10 @@
 import { supabase } from "/assets/function/Data/db.js";
 import { showNotificationToastr } from "/assets/function/Util/notification.js";
+import { trackPageVisit } from "/assets/function/Util/analyticsLogger.js";
 
 export default async function signup(renderPageHTML) {
   window.scrollTo(0, 0);
+  trackPageVisit();
 
   renderPageHTML.innerHTML = `
     <section class="min-h-screen flex items-center justify-center bg-gray-50">

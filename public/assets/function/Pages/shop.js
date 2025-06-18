@@ -5,8 +5,11 @@ import {
   searchProducts,
 } from "../Shop/ShopFunction.js";
 
+import { trackPageVisit } from "/assets/function/Util/analyticsLogger.js";
+
 export default async function shop(renderPageHTML) {
   window.scrollTo(0, 0);
+  trackPageVisit({ page: "shop" });
   renderPageHTML.innerHTML = `
     <section class="py-10 bg-gray-50 min-h-screen">
       <div class="max-w-7xl mx-auto px-4">

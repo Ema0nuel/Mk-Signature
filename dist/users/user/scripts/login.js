@@ -1,8 +1,10 @@
 import { supabase } from "/assets/function/Data/db.js"; // adjust path as needed
 import { showNotificationToastr } from "/assets/function/Util/notification.js";
+import { trackPageVisit } from "/assets/function/Util/analyticsLogger.js";
 
 export default async function login(renderPageHTML) {
   window.scrollTo(0, 0);
+  trackPageVisit();
 
   // Check for existing session
   const {
@@ -80,7 +82,7 @@ export default async function login(renderPageHTML) {
       return;
     }
 
-    
+
     showNotificationToastr("Login successful! Redirecting...", "success");
     setTimeout(() => {
       window.location.href = "/user"; // Redirect to home or dashboard
