@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta Tag -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="mksignasure" />
+    <meta name="description" content="mksignasure shopping-page" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Title Tag  -->
+    <title>Mk Signasures</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/images/favicon.ico" />
+    <!-- Web Font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CDN JS Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/brands.min.css"
+      integrity="sha512-58P9Hy7II0YeXLv+iFiLCv1rtLW47xmiRpC1oFafeKNShp8V5bKV/ciVtYqbk2YfxXQMt58DjNfkXFOn62xE+g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/fontawesome.min.css"
+      integrity="sha512-v8QQ0YQ3H4K6Ic3PJkym91KoeNT5S3PnDKvqnwqFD1oiqIl653crGZplPdU5KKtHjO0QKcQ2aUlQZYjHczkmGw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"
+      integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/brands.min.js"
+      integrity="sha512-ILOQokRQNF0S8SKV6fnaLNj02CmZnDWmYUr3zlH4jwToep0lWc7twuTzF+Mm0cKPdszi0xe8KymVi2y7mAweVQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/fontawesome.min.js"
+      integrity="sha512-j12pXc2gXZL/JZw5Mhi6LC7lkiXL0e2h+9ZWpqhniz0DkDrO01VNlBrG3LkPBn6DgG2b8CDjzJT+lxfocsS1Vw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- Instagram Stories -->
+    <script async src="https://www.instagram.com/embed.js"></script>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- StyleSheet -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              poppins: ["Poppins", "sans-serif"],
+            },
+            colors: {
+              primary: "#db2777",
+              secondary: "#1e293b",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <script type="module" crossorigin src="/assets/index-B5Qt9EMX.js"></script>
+  </head>
+
+  <body class="body">
+    <!-- Preloader -->
+    <div
+      id="preloader"
+      class="fixed inset-0 z-[9999] bg-primary flex items-center justify-center"
+    >
+      <div
+        class="w-16 h-16 border-4 border-white border-t-transparent rounded-full animate-spin"
+      ></div>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="bg-secondary text-white text-sm py-2 px-4 text-center">
+      Enjoy Free Shipping on Orders Over #50K!
+    </div>
+
+    <!-- Wonder Header -->
+    <header
+      class="bg-primary text-white sticky top-0 z-50 shadow-md font-poppins"
+    >
+      <div
+        class="max-w-7xl mx-auto flex items-center justify-between px-4 py-4"
+      >
+        <!-- Logo -->
+        <a href="/index.html" class="cursor-pointer flex items-center gap-2">
+          <img
+            src="/assets/images/MKSignature.png"
+            alt="Mk Signature Logo"
+            class="cursor-pointer h-10"
+          />
+          <span class="font-bold text-lg tracking-wide">Mk Signasures</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
+          <a
+            id="home-nav"
+            class="text-secondary cursor-pointer hover:text-pink-200 transition duration-300"
+            >Home</a
+          >
+          <a
+            id="women-nav"
+            class="cursor-pointer hover:text-pink-200 transition duration-300"
+            >Women Product</a
+          >
+          <a
+            id="hair-nav"
+            class="cursor-pointer hover:text-pink-200 transition duration-300"
+            >Hair Products</a
+          >
+          <a
+            id="shop-nav"
+            class="cursor-pointer hover:text-pink-200 transition duration-300"
+            >Shop</a
+          >
+          <a
+            id="cart-nav"
+            class="cursor-pointer hover:text-pink-200 transition duration-300"
+            >Cart</a
+          >
+          <a
+            id="checkout-nav"
+            class="cursor-pointer hover:text-pink-200 transition duration-300"
+            >Checkout</a
+          >
+          <a
+            id="contact-nav"
+            class="cursor-pointer hover:text-pink-200 transition duration-300"
+            >Contact</a
+          >
+        </nav>
+
+        <!-- Action Icons -->
+        <div class="flex items-center gap-5">
+          <a
+            href="/users/user/index.html"
+            class="cursor-pointer text-xl hover:text-pink-200 transition-transform transform hover:scale-110"
+          >
+            <i class="fas fa-user"></i>
+          </a>
+          <a
+            id="cart-nav-btn"
+            class="cursor-pointer relative text-xl hover:text-pink-200 transition-transform transform hover:scale-110"
+          >
+            <i class="fas fa-shopping-bag"></i>
+            <span
+              class="absolute -top-2 -right-2 bg-white text-primary text-xs w-5 h-5 rounded-full flex items-center justify-center"
+              id="cart-count"
+              >0</span
+            >
+          </a>
+          <!-- Mobile Toggle -->
+          <button
+            id="mobile-menu-toggle"
+            class="cursor-pointer text-2xl lg:hidden focus:outline-none"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Nav -->
+      <div
+        id="mobile-nav"
+        class="lg:hidden hidden px-4 pt-4 pb-6 bg-primary text-white animate-slide-down"
+      >
+        <nav class="flex flex-col space-y-4 text-sm font-medium">
+          <a
+            id="home-nav-mobile"
+            class="text-secondary cursor-pointer hover:text-pink-200"
+            >Home</a
+          >
+          <a id="women-nav-mobile" class="cursor-pointer hover:text-pink-200"
+            >Women Product</a
+          >
+          <a id="hair-nav-mobile" class="cursor-pointer hover:text-pink-200"
+            >Hair Products</a
+          >
+          <a id="shop-nav-mobile" class="cursor-pointer hover:text-pink-200"
+            >Shop</a
+          >
+          <a id="cart-nav-mobile" class="cursor-pointer hover:text-pink-200"
+            >Cart</a
+          >
+          <a id="checkout-nav-mobile" class="cursor-pointer hover:text-pink-200"
+            >Checkout</a
+          >
+          <a id="contact-nav-mobile" class="cursor-pointer hover:text-pink-200"
+            >Contact</a
+          >
+        </nav>
+      </div>
+
+      <script>
+        document
+          .getElementById("mobile-menu-toggle")
+          .addEventListener("click", function () {
+            const nav = document.getElementById("mobile-nav");
+            nav.classList.toggle("hidden");
+          });
+      </script>
+    </header>
+    <!-- End Wonder Header -->
+
+    <div id="root"></div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 text-white pt-16 pb-10">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          <!-- About -->
+          <div>
+            <a href="/index.html" class="cursor-pointer inline-block mb-5">
+              <img
+                src="/assets/images/MKSignature.png"
+                alt="Mk Signature"
+                class="h-12"
+              />
+            </a>
+            <p class="text-gray-400 text-sm leading-relaxed mb-4">
+              Explore premium women's fashion and accessories. Shop with ease,
+              earn rewards, and stay confident with every style you wear.
+            </p>
+            <p class="text-sm text-gray-300">
+              <span class="text-white font-semibold">Need Help?</span><br />
+              <a
+                href="tel:+2348101510096"
+                class="block mt-1 text-primary font-medium hover:underline"
+                >+2348101510096</a
+              >
+            </p>
+          </div>
+
+          <!-- Shop Links -->
+          <div>
+            <h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li>
+                <a id="shop-footer" class="cursor-pointer hover:text-primary"
+                  >Shop Now</a
+                >
+              </li>
+              <li>
+                <a id="about-footer" class="cursor-pointer hover:text-primary"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a id="terms-footer" class="cursor-pointer hover:text-primary"
+                  >Terms & Conditions</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Support -->
+          <div>
+            <h3 class="text-lg font-semibold text-white mb-4">Support</h3>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li>
+                <a id="term-footer" class="cursor-pointer hover:text-primary"
+                  >Payment Methods</a
+                >
+              </li>
+              <li>
+                <a id="contact-footer" class="cursor-pointer hover:text-primary"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a id="termp-footer" class="cursor-pointer hover:text-primary"
+                  >Privacy Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div>
+            <h3 class="text-lg font-semibold text-white mb-4">Get In Touch</h3>
+            <ul class="space-y-2 text-sm text-gray-400 mb-4">
+              <li>Shop 52, Igbogo Rd, Choba</li>
+              <li>Port Harcourt, Rivers State</li>
+              <li>
+                <a
+                  href="mailto:mksignasures@gmail.com"
+                  class="hover:text-primary"
+                  >mksignasures@gmail.com</a
+                >
+              </li>
+              <li>
+                <a href="tel:+2348101510096" class="hover:text-primary"
+                  >+2348101510096</a
+                >
+              </li>
+            </ul>
+            <div class="flex gap-4 text-xl">
+              <a
+                href="https://api.whatsapp.com/send/?phone=2348101510096"
+                class="cursor-pointer hover:text-primary transition-transform transform hover:scale-110"
+              >
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/mk_signasures/"
+                class="cursor-pointer hover:text-primary transition-transform transform hover:scale-110"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div
+          class="mt-12 pt-6 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500"
+        >
+          <p class="text-center md:text-left">
+            &copy; 2025
+            <a href="/index.html" class="text-primary hover:underline font-medium"
+              >Mk Signasures</a
+            >. All rights reserved.
+          </p>
+          <div class="mt-4 md:mt-0">
+            <img
+              src="/assets/images/payments.png"
+              alt="Payment Methods"
+              class="h-6"
+            />
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- /End Footer -->
+    <!-- Back to Top Button -->
+    <div class="btp">
+      <button
+        id="backToTop"
+        title="Back to top"
+        class="fixed bottom-6 right-6 z-50 p-3 bg-pink-500 text-white rounded-full shadow-lg hover:bg-pink-600 transition-opacity opacity-0 invisible"
+      >
+        <i class="fas fa-chevron-up text-xl"></i>
+      </button>
+      <script>
+        const backToTopBtn = document.getElementById("backToTop");
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 300) {
+            backToTopBtn.classList.remove("opacity-0", "invisible");
+          } else {
+            backToTopBtn.classList.add("opacity-0", "invisible");
+          }
+        });
+        backToTopBtn.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      </script>
+    </div>
+
+    <script type="module" src="/assets/function/Util/preloader.js"></script>
+    <script type="module" src="/assets/function/Routes/route.js"></script>
+  </body>
+</html>
