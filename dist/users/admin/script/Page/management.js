@@ -34,7 +34,7 @@ function showModal(html) {
     document.body.appendChild(modal);
   }
   modal.innerHTML = `
-    <div class="bg-white rounded-xl shadow-2xl p-0 w-full max-w-2xl relative animate-zoom-in overflow-hidden">
+    <div class="bg-white rounded-xl shadow-2xl p-0 w-full max-w-2xl relative animate-zoom-in overflow-hidden mx-2">
       ${html}
     </div>
   `;
@@ -65,12 +65,12 @@ style.innerHTML = `
 document.head.appendChild(style);
 
 export default async function adminManagement(renderPageHTML) {
-  window.scrollTo(0,0)
+  window.scrollTo(0, 0);
   // Render navbar and main section
   document.body.innerHTML = `
     ${Navbar("admin")}
     <div class="w-full md:pl-64 pt-8 pb-16 min-h-screen bg-gray-50 font-poppins">
-      <main id="main-section" class="max-w-7xl mx-auto px-4"></main>
+      <main id="main-section" class="max-w-7xl mx-auto px-2 sm:px-4"></main>
     </div>
   `;
 
@@ -95,11 +95,11 @@ export default async function adminManagement(renderPageHTML) {
       <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6 gap-4">
         <h1 class="text-2xl font-bold text-secondary flex items-center gap-2"><i class="fas fa-boxes-stacked text-pink-600"></i> Product Management</h1>
         <div class="flex gap-2">
-          <div class="relative">
+          <div class="relative w-full max-w-xs">
             <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
-            <input id="search-input" type="text" placeholder="Search products..." class="border pl-10 pr-3 py-2 rounded-lg shadow-sm focus:outline-none focus:ring w-48" />
+            <input id="search-input" type="text" placeholder="Search products..." class="border pl-10 pr-3 py-2 rounded-lg shadow-sm focus:outline-none focus:ring w-full" />
           </div>
-          <button id="add-product-btn" class="bg-gradient-to-r from-pink-500 to-pink-700 text-white px-4 py-2 rounded-lg font-semibold shadow hover:from-pink-600 hover:to-pink-800 transition flex items-center gap-2">
+          <button id="add-product-btn" class="bg-gradient-to-r from-pink-500 to-pink-700 text-white px-4 py-2 rounded-lg font-semibold shadow hover:from-pink-600 hover:to-pink-800 transition flex items-center gap-2 w-full md:w-auto">
             <i class="fas fa-plus"></i> Add New Product
           </button>
         </div>
@@ -108,33 +108,33 @@ export default async function adminManagement(renderPageHTML) {
         <table class="min-w-full divide-y divide-gray-200">
           <thead class="bg-gray-50">
             <tr>
-              <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">#</th>
-              <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Image</th>
-              <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Name</th>
-              <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Price</th>
-              <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Stock</th>
-              <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Categories</th>
-              <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Created</th>
-              <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Actions</th>
+              <th class="px-2 sm:px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">#</th>
+              <th class="px-2 sm:px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Image</th>
+              <th class="px-2 sm:px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Name</th>
+              <th class="px-2 sm:px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Price</th>
+              <th class="px-2 sm:px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Stock</th>
+              <th class="px-2 sm:px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Categories</th>
+              <th class="px-2 sm:px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Created</th>
+              <th class="px-2 sm:px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Actions</th>
             </tr>
           </thead>
           <tbody id="products-tbody" class="bg-white divide-y divide-gray-100">
             ${productsList.map((p, i) => `
               <tr>
-                <td class="px-4 py-3">${i + 1}</td>
-                <td class="px-4 py-3">
+                <td class="px-2 sm:px-4 py-3">${i + 1}</td>
+                <td class="px-2 sm:px-4 py-3">
                   <img src="${(p.images && p.images[0]?.url) || "/assets/images/default.png"}"
                     alt="${p.name}"
                     class="h-12 w-12 object-cover rounded border-2 border-pink-200 shadow cursor-pointer product-img-thumb transition-transform duration-200 hover:scale-110"
                     data-url="${(p.images && p.images[0]?.url) || "/assets/images/default.png"}"
                   />
                 </td>
-                <td class="px-4 py-3 font-semibold">${p.name}</td>
-                <td class="px-4 py-3">${formatMoney(p.price)}</td>
-                <td class="px-4 py-3">${p.stock}</td>
-                <td class="px-4 py-3 text-xs">${Array.isArray(p.categories) ? p.categories.join(", ") : ""}</td>
-                <td class="px-4 py-3 text-xs text-gray-500">${formatDate(p.created_at)}</td>
-                <td class="px-4 py-3">
+                <td class="px-2 sm:px-4 py-3 font-semibold break-words max-w-[120px] sm:max-w-[180px]">${p.name}</td>
+                <td class="px-2 sm:px-4 py-3">${formatMoney(p.price)}</td>
+                <td class="px-2 sm:px-4 py-3">${p.stock}</td>
+                <td class="px-2 sm:px-4 py-3 text-xs break-words max-w-[120px] sm:max-w-[180px]">${Array.isArray(p.categories) ? p.categories.join(", ") : ""}</td>
+                <td class="px-2 sm:px-4 py-3 text-xs text-gray-500">${formatDate(p.created_at)}</td>
+                <td class="px-2 sm:px-4 py-3">
                   <button class="edit-btn flex items-center gap-1 text-white bg-gradient-to-r from-blue-500 to-blue-700 px-3 py-1 rounded shadow hover:from-blue-600 hover:to-blue-800 transition" data-id="${p.id}">
                     <i class="fas fa-edit"></i> Edit
                   </button>
@@ -165,13 +165,10 @@ export default async function adminManagement(renderPageHTML) {
         renderEditProductPage(btn.dataset.id);
       };
     });
-
-    
   }
 
   // --- Render Edit/Create Product Page (in the same page) ---
   async function renderEditProductPage(productId) {
-    // Spinner while loading product details
     await showSpinner(mainSection, 400);
 
     // Fetch product if editing
@@ -197,8 +194,8 @@ export default async function adminManagement(renderPageHTML) {
             </span>
           `).join("")}
         </div>
-        <div class="flex gap-2 mb-2">
-          <input type="text" id="add-${type}-input" class="border rounded px-2 py-1 flex-1" placeholder="${placeholder}" list="suggest-${type}" />
+        <div class="flex gap-2 mb-2 flex-wrap">
+          <input type="text" id="add-${type}-input" class="border rounded px-2 py-1 flex-1 min-w-[120px]" placeholder="${placeholder}" list="suggest-${type}" />
           <datalist id="suggest-${type}">
             ${(type === "category" ? allCategories : allTags).map(val => `<option value="${val}">`).join("")}
           </datalist>
@@ -212,9 +209,9 @@ export default async function adminManagement(renderPageHTML) {
       return `
         <div id="attributes-list" class="space-y-2 mb-2">
           ${Object.entries(attrs || {}).filter(([k]) => k !== "tags").map(([key, value], idx) => `
-            <div class="flex gap-2 items-center attribute-row" data-idx="${idx}">
-              <input type="text" class="attr-key border rounded px-2 py-1 w-1/3" value="${key}" placeholder="Attribute Name" />
-              <input type="text" class="attr-value border rounded px-2 py-1 w-1/2" value="${value}" placeholder="Value" />
+            <div class="flex gap-2 items-center attribute-row flex-wrap" data-idx="${idx}">
+              <input type="text" class="attr-key border rounded px-2 py-1 w-full sm:w-1/3" value="${key}" placeholder="Attribute Name" />
+              <input type="text" class="attr-value border rounded px-2 py-1 w-full sm:w-1/2" value="${value}" placeholder="Value" />
               <button type="button" class="remove-attribute text-red-500"><i class="fas fa-times"></i></button>
             </div>
           `).join("")}
@@ -228,11 +225,11 @@ export default async function adminManagement(renderPageHTML) {
       return `
         <div id="variants-list" class="space-y-2 mb-2">
           ${(variants || []).map((v, idx) => `
-            <div class="flex gap-2 items-center variant-row" data-idx="${idx}">
-              <input type="text" class="variant-type border rounded px-2 py-1 w-1/4" value="${v.type || ""}" placeholder="Type (e.g. Color, Size)" />
-              <input type="text" class="variant-value border rounded px-2 py-1 w-1/4" value="${v.value || ""}" placeholder="Value" />
-              <input type="number" class="variant-price border rounded px-2 py-1 w-1/4" value="${v.price || ""}" placeholder="Price" />
-              <input type="number" class="variant-stock border rounded px-2 py-1 w-1/4" value="${v.stock || ""}" placeholder="Stock" />
+            <div class="flex gap-2 items-center variant-row flex-wrap" data-idx="${idx}">
+              <input type="text" class="variant-type border rounded px-2 py-1 w-full sm:w-1/4" value="${v.type || ""}" placeholder="Type (e.g. Color, Size)" />
+              <input type="text" class="variant-value border rounded px-2 py-1 w-full sm:w-1/4" value="${v.value || ""}" placeholder="Value" />
+              <input type="number" class="variant-price border rounded px-2 py-1 w-full sm:w-1/4" value="${v.price || ""}" placeholder="Price" />
+              <input type="number" class="variant-stock border rounded px-2 py-1 w-full sm:w-1/4" value="${v.stock || ""}" placeholder="Stock" />
               <button type="button" class="remove-variant text-red-500"><i class="fas fa-times"></i></button>
             </div>
           `).join("")}
@@ -259,7 +256,7 @@ export default async function adminManagement(renderPageHTML) {
 
     // --- Render Edit/Create Product Page ---
     mainSection.innerHTML = `
-      <div class="max-w-3xl mx-auto bg-gradient-to-br from-pink-50 via-white to-blue-50 rounded-xl shadow-lg p-8 mt-8 animate-fade-in border-2 border-pink-200">
+      <div class="max-w-3xl mx-auto bg-gradient-to-br from-pink-50 via-white to-blue-50 rounded-xl shadow-lg p-4 sm:p-8 mt-8 animate-fade-in border-2 border-pink-200">
         <button class="mb-4 text-pink-700 hover:underline flex items-center gap-1 font-semibold" id="back-btn"><i class="fas fa-arrow-left"></i> Back to Products</button>
         <h2 class="text-2xl font-bold mb-4 flex items-center gap-2 text-pink-700"><i class="fas fa-box-open"></i> ${product ? "Edit" : "Create"} Product</h2>
         <form id="product-form" class="space-y-4">
@@ -316,7 +313,7 @@ export default async function adminManagement(renderPageHTML) {
             <input type="file" name="images" id="product-images" multiple accept="image/*" class="w-full" />
             ${renderImages(product?.images || [])}
           </div>
-          <div class="flex gap-2 mt-6">
+          <div class="flex gap-2 mt-6 flex-wrap">
             <button type="submit" class="bg-gradient-to-r from-pink-500 to-pink-700 text-white px-4 py-2 rounded-lg font-semibold shadow hover:from-pink-600 hover:to-pink-800 transition flex items-center gap-2"><i class="fas fa-save"></i> ${product ? "Update" : "Create"}</button>
             <button type="button" id="cancel-btn" class="bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-semibold shadow hover:bg-gray-200 transition flex items-center gap-2"><i class="fas fa-times"></i> Cancel</button>
             ${product ? `<button type="button" id="delete-product-btn" class="bg-red-100 text-red-700 px-4 py-2 rounded-lg font-semibold shadow hover:bg-red-200 transition flex items-center gap-2"><i class="fas fa-trash"></i> Delete</button>` : ""}
@@ -359,10 +356,10 @@ export default async function adminManagement(renderPageHTML) {
       mainSection.querySelector("#add-attribute-btn").onclick = () => {
         const list = mainSection.querySelector("#attributes-list");
         const div = document.createElement("div");
-        div.className = "flex gap-2 items-center attribute-row";
+        div.className = "flex gap-2 items-center attribute-row flex-wrap";
         div.innerHTML = `
-          <input type="text" class="attr-key border rounded px-2 py-1 w-1/3" placeholder="Attribute Name" />
-          <input type="text" class="attr-value border rounded px-2 py-1 w-1/2" placeholder="Value" />
+          <input type="text" class="attr-key border rounded px-2 py-1 w-full sm:w-1/3" placeholder="Attribute Name" />
+          <input type="text" class="attr-value border rounded px-2 py-1 w-full sm:w-1/2" placeholder="Value" />
           <button type="button" class="remove-attribute text-red-500"><i class="fas fa-times"></i></button>
         `;
         list.appendChild(div);
@@ -374,12 +371,12 @@ export default async function adminManagement(renderPageHTML) {
       mainSection.querySelector("#add-variant-btn").onclick = () => {
         const list = mainSection.querySelector("#variants-list");
         const div = document.createElement("div");
-        div.className = "flex gap-2 items-center variant-row";
+        div.className = "flex gap-2 items-center variant-row flex-wrap";
         div.innerHTML = `
-          <input type="text" class="variant-type border rounded px-2 py-1 w-1/4" placeholder="Type (e.g. Color, Size)" />
-          <input type="text" class="variant-value border rounded px-2 py-1 w-1/4" placeholder="Value" />
-          <input type="number" class="variant-price border rounded px-2 py-1 w-1/4" placeholder="Price" />
-          <input type="number" class="variant-stock border rounded px-2 py-1 w-1/4" placeholder="Stock" />
+          <input type="text" class="variant-type border rounded px-2 py-1 w-full sm:w-1/4" placeholder="Type (e.g. Color, Size)" />
+          <input type="text" class="variant-value border rounded px-2 py-1 w-full sm:w-1/4" placeholder="Value" />
+          <input type="number" class="variant-price border rounded px-2 py-1 w-full sm:w-1/4" placeholder="Price" />
+          <input type="number" class="variant-stock border rounded px-2 py-1 w-full sm:w-1/4" placeholder="Stock" />
           <button type="button" class="remove-variant text-red-500"><i class="fas fa-times"></i></button>
         `;
         list.appendChild(div);

@@ -7,7 +7,6 @@ import { formatMoneyAmount } from "../Util/format.js";
 import { displayView } from "../Shop/modalView.js";
 import { trackPageVisit } from "/assets/function/Util/analyticsLogger.js";
 
-// Use Vite's asset handling for default image
 const defaultImg = new URL('/assets/images/default.png', import.meta.url).href;
 const fallbackImg = new URL('/assets/images/products/armless-braid-hair-1.png', import.meta.url).href;
 
@@ -33,7 +32,7 @@ export default async function home(renderPageHTML) {
     return;
   }
 
-  // Helper: Filter by category
+  // Helper: Filter by category/tag/type
   const filterByCategory = (cat) =>
     products.filter((p) =>
       (p.categories || [])
@@ -41,29 +40,61 @@ export default async function home(renderPageHTML) {
         .includes(cat.toLowerCase())
     );
 
-  // Helper: Get trending (latest 8), hot (top 4 by rating), on sale (lowest price), best seller (highest review_count), top viewed (simulate by review_count)
-  const trendingItems = products.slice(0, 8);
-  const hotItems = [...products]
-    .sort((a, b) => (b.average_rating || 0) - (a.average_rating || 0))
+  // Helper: Remove products already in a set
+  function excludeProducts(list, excludeSet) {
+    return list.filter((p) => !excludeSet.has(p.id));
+  }
+
+  // --- HOT ITEMS: 3 most recent, in stock ---
+  const hotItems = products
+    .filter((p) => p.stock > 0)
+    .slice(0, 3);
+
+  // --- Trending Tabs: 6 per category, show tags/names/types ---
+  function trendingList(cat) {
+    return products
+      .filter((p) =>
+        (p.categories || [])
+          .map((c) => c.toLowerCase())
+          .includes(cat.toLowerCase())
+      )
+      .slice(0, 6);
+  }
+
+  // --- On Sale: 4 most recent ---
+  let usedIds = new Set();
+  const onSale = products
+    .filter((p) => {
+      if (usedIds.has(p.id)) return false;
+      usedIds.add(p.id);
+      return true;
+    })
     .slice(0, 4);
-  const onSale = [...products].sort((a, b) => a.price - b.price).slice(0, 4);
-  const bestSeller = [...products]
-    .sort((a, b) => (b.review_count || 0) - (a.review_count || 0))
-    .slice(0, 4);
-  const topViewed = bestSeller; // Simulate
+
+  // --- Best Seller: 4 highest price, not in onSale ---
+  const bestSeller = excludeProducts(
+    [...products]
+      .sort((a, b) => (b.price || 0) - (a.price || 0)),
+    new Set(onSale.map((p) => p.id))
+  ).slice(0, 4);
+  bestSeller.forEach((p) => usedIds.add(p.id));
+
+  // --- Top View: 4 most reviews, not in onSale or bestSeller ---
+  const topView = excludeProducts(
+    [...products]
+      .sort((a, b) => (b.review_count || 0) - (a.review_count || 0)),
+    new Set([...onSale, ...bestSeller].map((p) => p.id))
+  ).slice(0, 4);
 
   // Helper: Render product card
   const renderProductCard = (product, showQuickView = true) => {
-    // Use Vite asset for default/fallback images
     const img =
       (product.images && product.images[0]?.url) ||
       defaultImg;
     return `
-      <div class="bg-white rounded-xl shadow hover:shadow-lg transition duration-300 flex flex-col group relative overflow-hidden js-product-card" data-product-id="${product.id
-      }">
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition duration-300 flex flex-col group relative overflow-hidden js-product-card" data-product-id="${product.id}">
         <div class="relative">
-          <img src="${img}" alt="${product.name
-      }" loading="lazy" class="w-full h-56 object-cover rounded-t-xl group-hover:scale-105 transition-transform duration-500" onerror="this.src='${fallbackImg}';" />
+          <img src="${img}" alt="${product.name}" loading="lazy" class="w-full h-56 object-cover rounded-t-xl group-hover:scale-105 transition-transform duration-500" onerror="this.src='${fallbackImg}';" />
           ${showQuickView
         ? `<button class="absolute top-3 right-3 bg-white/80 hover:bg-pink-500 hover:text-white text-gray-700 rounded-full p-2 shadow transition z-10 quick-view-btn" data-product-id="${product.id}" title="Quick View">
                   <i class="fas fa-eye"></i>
@@ -73,22 +104,16 @@ export default async function home(renderPageHTML) {
         </div>
         <div class="p-4 flex-1 flex flex-col">
           <h3 class="text-lg font-semibold text-gray-800 mb-1">
-            <a class="product-name-link cursor-pointer" data-product-id="${product.id
-      }">${product.name}</a>
+            <a class="product-name-link cursor-pointer" data-product-id="${product.id}">${product.name}</a>
           </h3>
-          <p class="text-xs text-gray-500 mb-2">by <span class="font-medium text-indigo-600">${product.brand || ""
-      }</span></p>
+          <p class="text-xs text-gray-500 mb-2">by <span class="font-medium text-indigo-600">${product.brand || ""}</span></p>
           <div class="flex items-center text-yellow-400 text-sm mb-2">
             <i class="fas fa-star"></i>
-            <span class="ml-1 text-gray-700">${product.average_rating || 0
-      } / 5</span>
-            <span class="ml-2 text-gray-400">(${product.review_count || 0
-      })</span>
+            <span class="ml-1 text-gray-700">${product.average_rating || 0} / 5</span>
+            <span class="ml-2 text-gray-400">(${product.review_count || 0})</span>
           </div>
           <div class="flex items-center mb-2">
-            <span class="text-xl font-bold text-green-600"><i class="fa-solid fa-naira-sign"></i>${formatMoneyAmount(
-        product.price
-      )}</span>
+            <span class="text-xl font-bold text-green-600"><i class="fa-solid fa-naira-sign"></i>${formatMoneyAmount(product.price)}</span>
           </div>
           <div class="flex gap-2 flex-wrap mb-2">
             ${(product.categories || [])
@@ -97,10 +122,16 @@ export default async function home(renderPageHTML) {
             `<span class="px-2 py-0.5 text-xs bg-blue-100 text-blue-600 rounded-full">#${cat}</span>`
         )
         .join("")}
+            ${(product.tags || [])
+        .map(
+          (tag) =>
+            `<span class="px-2 py-0.5 text-xs bg-pink-100 text-pink-600 rounded-full">#${tag}</span>`
+        )
+        .join("")}
+            ${product.type ? `<span class="px-2 py-0.5 text-xs bg-green-100 text-green-600 rounded-full">${product.type}</span>` : ""}
           </div>
           <div class="flex-1"></div>
-          <button class="mt-3 w-full bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300 add-to-cart-btn" data-product-id="${product.id
-      }">
+          <button class="mt-3 w-full bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300 add-to-cart-btn" data-product-id="${product.id}">
             <i class="fas fa-shopping-cart mr-2"></i> Add to Cart
           </button>
         </div>
@@ -176,8 +207,8 @@ export default async function home(renderPageHTML) {
           <button id="cosmetics-trend" class="cursor-pointer hover:text-primary">Cosmetics</button>
           <button id="dressing-trend" class="cursor-pointer hover:text-primary">Dressing</button>
         </div>
-        <div id="trending-list" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-          ${renderProductList(filterByCategory("women").slice(0, 8))}
+        <div id="trending-list" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-6">
+          ${renderProductList(trendingList("women"))}
         </div>
       </div>
     </section>
@@ -208,7 +239,7 @@ export default async function home(renderPageHTML) {
     <section class="py-16 bg-gray-50">
       <div class="max-w-7xl mx-auto px-4">
         <div class="text-center mb-8">
-          <h2 class="text-2xl font-bold text-gray-800">Hot Item</h2>
+          <h2 class="text-2xl font-bold text-gray-800">Hot Items</h2>
         </div>
         <div id="hot-items-list" class="flex flex-wrap justify-center gap-6">
           ${renderProductList(hotItems)}
@@ -238,7 +269,7 @@ export default async function home(renderPageHTML) {
           <div>
             <h2 class="text-xl font-semibold text-gray-800 mb-4 border-b pb-2">Top Viewed</h2>
             <div id="top-view-list" class="space-y-4">
-              ${renderProductList(topViewed, false)}
+              ${renderProductList(topView, false)}
             </div>
           </div>
         </div>
@@ -323,10 +354,10 @@ export default async function home(renderPageHTML) {
   `;
 
   // Event Listeners
-  setHomeEventListeners(products, renderProductCard);
+  setHomeEventListeners(products, renderProductCard, trendingList);
 }
 
-function setHomeEventListeners(products, renderProductCard) {
+function setHomeEventListeners(products, renderProductCard, trendingList) {
   // Shop Now button
   document
     .getElementById("shop-now-btn")
@@ -366,11 +397,8 @@ function setHomeEventListeners(products, renderProductCard) {
       document
         .getElementById(id)
         ?.classList.add("border-b-2", "border-primary", "text-primary");
-      const filtered = products.filter((p) =>
-        (p.categories || []).map((c) => c.toLowerCase()).includes(cat)
-      );
+      const filtered = trendingList(cat);
       document.getElementById("trending-list").innerHTML = filtered
-        .slice(0, 8)
         .map((p) => renderProductCard(p))
         .join("");
       setProductCardEvents(products, renderProductCard);
@@ -416,7 +444,7 @@ function setProductCardEvents(products, renderProductCard) {
     link.addEventListener("click", (e) => {
       e.preventDefault();
       const productId = link.dataset.productId;
-      if (!productId) return; // Prevent undefined
+      if (!productId) return;
       loadPage("productDetail", productId);
     });
   });
@@ -431,11 +459,8 @@ function setProductCardEvents(products, renderProductCard) {
       )
         return;
       const productId = card.getAttribute("data-product-id");
-      if (!productId) return; // Prevent undefined
+      if (!productId) return;
       loadPage("productDetail", productId);
     });
   });
 }
-
-
-

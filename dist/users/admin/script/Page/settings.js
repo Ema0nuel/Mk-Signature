@@ -29,7 +29,6 @@ async function handleGeneralSettingsSubmit(e) {
   e.preventDefault();
   const form = e.target;
   const data = Object.fromEntries(new FormData(form));
-  // Save to Supabase (example: update settings table)
   await supabase.from("settings").upsert([{
     key: "general",
     value: JSON.stringify(data)
@@ -42,7 +41,6 @@ async function handleAppearanceSettingsSubmit(e) {
   e.preventDefault();
   const form = e.target;
   const data = Object.fromEntries(new FormData(form));
-  // Save to Supabase (example: update settings table)
   await supabase.from("settings").upsert([{
     key: "appearance",
     value: JSON.stringify(data)
@@ -77,18 +75,15 @@ async function handleApiSettingsSubmit(e) {
 // --- Menu Management (Add/Edit) ---
 function handleMenuEdit(menuName) {
   alert(`Edit menu: ${menuName}`);
-  // You can open a modal or inline editor here
 }
 function handleMenuAdd(e) {
   e.preventDefault();
-  // Example: Add menu item logic
   alert("Menu item added (demo)");
 }
 
 // --- Backup & Restore ---
 function handleCreateBackup() {
   alert("Backup created (demo)");
-  // You can call a Supabase function or API here
 }
 
 // --- Trash/Recycle Bin ---
@@ -110,11 +105,11 @@ export default async function adminSettings() {
   body.innerHTML = `
     ${Navbar("settings")}
     <div class="md:ml-64 min-h-screen bg-[#0a0f1d] text-[#00ffcc] font-sans">
-      <main class="max-w-5xl mx-auto px-2 md:px-8 py-8">
+      <main class="max-w-5xl mx-auto px-2 sm:px-4 md:px-8 py-8 w-full">
         <h1 class="text-2xl md:text-3xl font-bold mb-8 flex items-center gap-3">${icon("general", "w-7 h-7")} Settings & Configuration</h1>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <!-- General Settings -->
-          <section class="bg-[#10182f] rounded-xl shadow-lg p-6 mb-4">
+          <section class="bg-[#10182f] rounded-xl shadow-lg p-4 sm:p-6 mb-4 w-full">
             <h2 class="text-lg font-bold mb-4 flex items-center gap-2">${icon("general")} General Settings</h2>
             <form id="general-settings-form" class="space-y-4">
               <div>
@@ -125,7 +120,7 @@ export default async function adminSettings() {
                 <label class="block font-semibold mb-1">Tagline</label>
                 <input type="text" name="tagline" class="w-full rounded bg-[#0a0f1d] border border-[#00ffcc] px-3 py-2 text-[#00ffcc]" placeholder="Tagline" />
               </div>
-              <div class="flex gap-2">
+              <div class="flex flex-col sm:flex-row gap-2">
                 <div class="flex-1">
                   <label class="block font-semibold mb-1">Default Timezone</label>
                   <input type="text" name="timezone" class="w-full rounded bg-[#0a0f1d] border border-[#00ffcc] px-3 py-2 text-[#00ffcc]" placeholder="e.g. UTC" />
@@ -135,7 +130,7 @@ export default async function adminSettings() {
                   <input type="text" name="datetime_format" class="w-full rounded bg-[#0a0f1d] border border-[#00ffcc] px-3 py-2 text-[#00ffcc]" placeholder="e.g. YYYY-MM-DD" />
                 </div>
               </div>
-              <div class="flex gap-2">
+              <div class="flex flex-col sm:flex-row gap-2">
                 <div class="flex-1">
                   <label class="block font-semibold mb-1">Contact Email</label>
                   <input type="email" name="contact_email" class="w-full rounded bg-[#0a0f1d] border border-[#00ffcc] px-3 py-2 text-[#00ffcc]" placeholder="Contact Email" />
@@ -152,12 +147,12 @@ export default async function adminSettings() {
                   <option value="latest">Latest Posts</option>
                 </select>
               </div>
-              <button type="submit" class="mt-2 px-4 py-2 rounded bg-[#00ffcc] text-[#0a0f1d] font-bold hover:bg-[#00c9a7] transition">${icon("save")} Save</button>
+              <button type="submit" class="mt-2 px-4 py-2 rounded bg-[#00ffcc] text-[#0a0f1d] font-bold hover:bg-[#00c9a7] transition w-full sm:w-auto">${icon("save")} Save</button>
             </form>
           </section>
 
           <!-- Appearance / Theme Settings -->
-          <section class="bg-[#10182f] rounded-xl shadow-lg p-6 mb-4">
+          <section class="bg-[#10182f] rounded-xl shadow-lg p-4 sm:p-6 mb-4 w-full">
             <h2 class="text-lg font-bold mb-4 flex items-center gap-2">${icon("appearance")} Appearance / Theme</h2>
             <form id="appearance-settings-form" class="space-y-4">
               <div>
@@ -189,29 +184,29 @@ export default async function adminSettings() {
                 <label class="block font-semibold mb-1">Favicon Upload</label>
                 <input type="file" name="favicon" class="w-full text-[#00ffcc]"/>
               </div>
-              <button type="submit" class="mt-2 px-4 py-2 rounded bg-[#00ffcc] text-[#0a0f1d] font-bold hover:bg-[#00c9a7] transition">${icon("save")} Save</button>
+              <button type="submit" class="mt-2 px-4 py-2 rounded bg-[#00ffcc] text-[#0a0f1d] font-bold hover:bg-[#00c9a7] transition w-full sm:w-auto">${icon("save")} Save</button>
             </form>
           </section>
         </div>
 
         <!-- Navigation / Menu Management -->
-        <section class="bg-[#10182f] rounded-xl shadow-lg p-6 mb-8">
+        <section class="bg-[#10182f] rounded-xl shadow-lg p-4 sm:p-6 mb-8 w-full">
           <h2 class="text-lg font-bold mb-4 flex items-center gap-2">${icon("menu")} Navigation / Menu Management</h2>
           <div class="flex flex-col md:flex-row gap-4">
-            <div class="flex-1">
+            <div class="flex-1 min-w-0">
               <h3 class="font-semibold mb-2">Menus</h3>
               <ul class="space-y-2" id="menu-list">
                 <li class="flex items-center gap-2"><span class="font-bold">Main Menu</span> <button class="ml-auto text-[#00ffcc] hover:underline menu-edit-btn" data-menu="Main Menu">${icon("edit")} Edit</button></li>
                 <li class="flex items-center gap-2"><span class="font-bold">Footer Menu</span> <button class="ml-auto text-[#00ffcc] hover:underline menu-edit-btn" data-menu="Footer Menu">${icon("edit")} Edit</button></li>
               </ul>
             </div>
-            <div class="flex-1">
+            <div class="flex-1 min-w-0">
               <h3 class="font-semibold mb-2">Menu Editor</h3>
               <form id="menu-editor-form" class="bg-[#0a0f1d] rounded p-3 border border-[#00ffcc]">
-                <div class="mb-2 flex gap-2">
+                <div class="mb-2 flex flex-col sm:flex-row gap-2">
                   <input type="text" name="link_text" class="flex-1 rounded bg-[#10182f] border border-[#00ffcc] px-2 py-1 text-[#00ffcc]" placeholder="Link Text"/>
                   <input type="url" name="url" class="flex-1 rounded bg-[#10182f] border border-[#00ffcc] px-2 py-1 text-[#00ffcc]" placeholder="URL"/>
-                  <button type="submit" class="px-3 py-1 rounded bg-[#00ffcc] text-[#0a0f1d] font-bold hover:bg-[#00c9a7]">${icon("save")}</button>
+                  <button type="submit" class="px-3 py-1 rounded bg-[#00ffcc] text-[#0a0f1d] font-bold hover:bg-[#00c9a7] w-full sm:w-auto">${icon("save")}</button>
                 </div>
                 <div class="text-xs text-[#00ffcc]">Drag and drop to reorder menu items.</div>
               </form>
@@ -220,14 +215,14 @@ export default async function adminSettings() {
         </section>
 
         <!-- Email / Notification Settings -->
-        <section class="bg-[#10182f] rounded-xl shadow-lg p-6 mb-8">
+        <section class="bg-[#10182f] rounded-xl shadow-lg p-4 sm:p-6 mb-8 w-full">
           <h2 class="text-lg font-bold mb-4 flex items-center gap-2">${icon("email")} Email / Notification Settings</h2>
           <form id="email-settings-form" class="space-y-4">
             <div>
               <label class="block font-semibold mb-1">SMTP Host</label>
               <input type="text" name="smtp_host" class="w-full rounded bg-[#0a0f1d] border border-[#00ffcc] px-3 py-2 text-[#00ffcc]" placeholder="SMTP Host" />
             </div>
-            <div class="flex gap-2">
+            <div class="flex flex-col sm:flex-row gap-2">
               <div class="flex-1">
                 <label class="block font-semibold mb-1">SMTP User</label>
                 <input type="text" name="smtp_user" class="w-full rounded bg-[#0a0f1d] border border-[#00ffcc] px-3 py-2 text-[#00ffcc]" placeholder="SMTP User" />
@@ -249,12 +244,12 @@ export default async function adminSettings() {
               <label class="block font-semibold mb-1">Enable Notifications</label>
               <input type="checkbox" name="enable_notifications" class="accent-[#00ffcc] scale-125 ml-2"/>
             </div>
-            <button type="submit" class="mt-2 px-4 py-2 rounded bg-[#00ffcc] text-[#0a0f1d] font-bold hover:bg-[#00c9a7] transition">${icon("save")} Save</button>
+            <button type="submit" class="mt-2 px-4 py-2 rounded bg-[#00ffcc] text-[#0a0f1d] font-bold hover:bg-[#00c9a7] transition w-full sm:w-auto">${icon("save")} Save</button>
           </form>
         </section>
 
         <!-- Integrations / API Settings -->
-        <section class="bg-[#10182f] rounded-xl shadow-lg p-6 mb-8">
+        <section class="bg-[#10182f] rounded-xl shadow-lg p-4 sm:p-6 mb-8 w-full">
           <h2 class="text-lg font-bold mb-4 flex items-center gap-2">${icon("api")} Integrations / API Settings</h2>
           <form id="api-settings-form" class="space-y-4">
             <div>
@@ -269,14 +264,14 @@ export default async function adminSettings() {
               <label class="block font-semibold mb-1">Enable Integrations</label>
               <input type="checkbox" name="enable_integrations" class="accent-[#00ffcc] scale-125 ml-2"/>
             </div>
-            <button type="submit" class="mt-2 px-4 py-2 rounded bg-[#00ffcc] text-[#0a0f1d] font-bold hover:bg-[#00c9a7] transition">${icon("save")} Save</button>
+            <button type="submit" class="mt-2 px-4 py-2 rounded bg-[#00ffcc] text-[#0a0f1d] font-bold hover:bg-[#00c9a7] transition w-full sm:w-auto">${icon("save")} Save</button>
           </form>
         </section>
 
         <!-- Tools & Utilities -->
         <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <!-- Activity Log -->
-          <div class="bg-[#10182f] rounded-xl shadow-lg p-6 mb-8">
+          <div class="bg-[#10182f] rounded-xl shadow-lg p-4 sm:p-6 mb-8 w-full overflow-x-auto">
             <h2 class="text-lg font-bold mb-4 flex items-center gap-2">${icon("log")} Activity Log / Audit Trail</h2>
             <div class="overflow-x-auto">
               <table class="min-w-full text-xs">
@@ -295,9 +290,9 @@ export default async function adminSettings() {
             </div>
           </div>
           <!-- Backup & Restore -->
-          <div class="bg-[#10182f] rounded-xl shadow-lg p-6 mb-8">
+          <div class="bg-[#10182f] rounded-xl shadow-lg p-4 sm:p-6 mb-8 w-full">
             <h2 class="text-lg font-bold mb-4 flex items-center gap-2">${icon("backup")} Backup & Restore</h2>
-            <button id="create-backup-btn" class="mb-3 px-4 py-2 rounded bg-[#00ffcc] text-[#0a0f1d] font-bold hover:bg-[#00c9a7] transition">${icon("save")} Create Backup Now</button>
+            <button id="create-backup-btn" class="mb-3 px-4 py-2 rounded bg-[#00ffcc] text-[#0a0f1d] font-bold hover:bg-[#00c9a7] transition w-full sm:w-auto">${icon("save")} Create Backup Now</button>
             <div class="mb-2 font-semibold">Previous Backups</div>
             <ul class="space-y-2 text-sm" id="backup-list">
               <li class="flex items-center gap-2">No backups yet.</li>
@@ -315,7 +310,7 @@ export default async function adminSettings() {
 
         <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <!-- System Info -->
-          <div class="bg-[#10182f] rounded-xl shadow-lg p-6 mb-8">
+          <div class="bg-[#10182f] rounded-xl shadow-lg p-4 sm:p-6 mb-8 w-full">
             <h2 class="text-lg font-bold mb-4 flex items-center gap-2">${icon("info")} System Information / Diagnostics</h2>
             <ul class="text-sm space-y-1">
               <li>Server OS: <span class="font-semibold">Linux</span></li>
@@ -327,7 +322,7 @@ export default async function adminSettings() {
             </ul>
           </div>
           <!-- Trash / Recycle Bin -->
-          <div class="bg-[#10182f] rounded-xl shadow-lg p-6 mb-8">
+          <div class="bg-[#10182f] rounded-xl shadow-lg p-4 sm:p-6 mb-8 w-full">
             <h2 class="text-lg font-bold mb-4 flex items-center gap-2">${icon("trash")} Trash / Recycle Bin</h2>
             <ul class="space-y-2 text-sm" id="trash-list">
               <li class="flex items-center gap-2">No deleted items.</li>
@@ -336,6 +331,15 @@ export default async function adminSettings() {
         </section>
       </main>
     </div>
+    <style>
+      @media (max-width: 640px) {
+        .rounded-xl { border-radius: 1rem !important; }
+        .shadow-lg, .shadow { box-shadow: 0 2px 8px 0 rgba(0,0,0,0.10) !important; }
+        .overflow-x-auto { overflow-x: auto !important; }
+        table.min-w-full { min-width: 600px !important; }
+        th, td { white-space: nowrap; }
+      }
+    </style>
   `;
 
   // Show spinner for main content
@@ -368,7 +372,7 @@ export default async function adminSettings() {
     .limit(10);
 
   const logTable = document.getElementById("activity-log-table");
-  if (logs && logs.length) {
+  if (logTable && logs && logs.length) {
     logTable.innerHTML = logs.map(log => `
       <tr>
         <td class="px-2 py-1">${new Date(log.created_at).toLocaleString()}</td>
@@ -377,9 +381,7 @@ export default async function adminSettings() {
         <td class="px-2 py-1">${log.row_data?.page || "-"}</td>
       </tr>
     `).join("");
-  } else {
+  } else if (logTable) {
     logTable.innerHTML = `<tr><td colspan="4" class="px-2 py-2 text-center text-[#00ffcc]">No logs found.</td></tr>`;
   }
-
-  // You can similarly fetch and render backups, trash, etc. using Supabase tables.
 }
