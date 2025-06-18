@@ -4,2456 +4,389 @@
     <!-- Meta Tag -->
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="author" content="mksignature" />
-    <meta name="description" content="mksignature shopping-page" />
+    <meta name="author" content="mksignasure" />
+    <meta name="description" content="mksignasure shopping-page" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <!-- Title Tag  -->
-    <title>Mk Signature</title>
+    <title>Mk Signasures</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/favicon.ico" />
+    <link rel="icon" type="image/png" href="/assets/images/favicon.ico" />
     <!-- Web Font -->
     <link
       href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
       rel="stylesheet"
     />
 
+    <!-- CDN JS Link -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- Instagram Stories -->
-    <script async src="//www.instagram.com/embed.js"></script>
-    <!-- StyleSheet -->
-
-    <!-- Notification Message -->
-    <!-- SuccessIcon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/brands.min.css"
+      integrity="sha512-58P9Hy7II0YeXLv+iFiLCv1rtLW47xmiRpC1oFafeKNShp8V5bKV/ciVtYqbk2YfxXQMt58DjNfkXFOn62xE+g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/fontawesome.min.css"
+      integrity="sha512-v8QQ0YQ3H4K6Ic3PJkym91KoeNT5S3PnDKvqnwqFD1oiqIl653crGZplPdU5KKtHjO0QKcQ2aUlQZYjHczkmGw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <script
-      src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
-      type="module"
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"
+      integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/brands.min.js"
+      integrity="sha512-ILOQokRQNF0S8SKV6fnaLNj02CmZnDWmYUr3zlH4jwToep0lWc7twuTzF+Mm0cKPdszi0xe8KymVi2y7mAweVQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/fontawesome.min.js"
+      integrity="sha512-j12pXc2gXZL/JZw5Mhi6LC7lkiXL0e2h+9ZWpqhniz0DkDrO01VNlBrG3LkPBn6DgG2b8CDjzJT+lxfocsS1Vw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     ></script>
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="css/bootstrap.css" />
-    <!-- Magnific Popup -->
-    <link rel="stylesheet" href="css/magnific-popup.min.css" />
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="css/font-awesome.css" />
-    <!-- Fancybox -->
-    <link rel="stylesheet" href="css/jquery.fancybox.min.css" />
-    <!-- Themify Icons -->
-    <link rel="stylesheet" href="css/themify-icons.css" />
-    <!-- Nice Select CSS -->
-    <link rel="stylesheet" href="css/niceselect.css" />
-    <!-- Animate CSS -->
-    <link rel="stylesheet" href="css/animate.css" />
-    <!-- Flex Slider CSS -->
-    <link rel="stylesheet" href="css/flex-slider.min.css" />
-    <!-- Owl Carousel -->
-    <link rel="stylesheet" href="css/owl-carousel.css" />
-    <!-- Slicknav -->
-    <link rel="stylesheet" href="css/slicknav.min.css" />
-    <!-- Newsletter -->
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <!-- Instagram Stories -->
+    <script async src="https://www.instagram.com/embed.js"></script>
 
-    <!-- mksignature StyleSheet -->
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="css/responsive.css" />
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- StyleSheet -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              poppins: ["Poppins", "sans-serif"],
+            },
+            colors: {
+              primary: "#db2777",
+              secondary: "#1e293b",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
   </head>
 
-  <body class="js">
+  <body class="body">
     <!-- Preloader -->
-    <div class="preloader">
-      <div class="preloader-inner">
-        <div class="preloader-icon">
-          <span></span>
-          <span></span>
-        </div>
-      </div>
+    <div
+      id="preloader"
+      class="fixed inset-0 z-[9999] bg-primary flex items-center justify-center"
+    >
+      <div
+        class="w-16 h-16 border-4 border-white border-t-transparent rounded-full animate-spin"
+      ></div>
     </div>
-    <!-- End Preloader -->
-    <div class="display-message">
-      <div class="update-message" id="d-message">
-        <h6 class="active-message">
-          <i class="fas fa-check-circle"></i> <span> Added To Cart</span>
-        </h6>
-      </div>
-    </div>
-    <!-- Header -->
-    <header class="header shop">
-      <div class="middle-inner">
-        <div class="container">
-          <div class="row flexin">
-            <div class="col-lg-2 col-md-2 col-12">
-              <!-- Logo -->
-              <div class="logo">
-                <a><img src="images/MKSignature.png" alt="logo" /></a>
-              </div>
-              <!--/ End Logo -->
-              <div class="mobile-nav"></div>
-            </div>
 
-            <div
-              class="user-account js-user"
-              onclick="window.location.href = `./user/index.html`
-            "
+    <!-- Top Bar -->
+    <div class="bg-secondary text-white text-sm py-2 px-4 text-center">
+      Enjoy Free Shipping on Orders Over #50K!
+    </div>
+
+    <!-- Wonder Header -->
+    <header
+      class="bg-primary text-white sticky top-0 z-50 shadow-md font-poppins"
+    >
+      <div
+        class="max-w-7xl mx-auto flex items-center justify-between px-4 py-4"
+      >
+        <!-- Logo -->
+        <a href="/index.html" class="cursor-pointer flex items-center gap-2">
+          <img
+            src="/assets/images/MKSignature.png"
+            alt="Mk Signature Logo"
+            class="cursor-pointer h-10"
+          />
+          <span class="font-bold text-lg tracking-wide">Mk Signasures</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
+          <a
+            id="home-nav"
+            class="text-secondary cursor-pointer hover:text-pink-200 transition duration-300"
+            >Home</a
+          >
+          <a
+            id="women-nav"
+            class="cursor-pointer hover:text-pink-200 transition duration-300"
+            >Women Product</a
+          >
+          <a
+            id="hair-nav"
+            class="cursor-pointer hover:text-pink-200 transition duration-300"
+            >Hair Products</a
+          >
+          <a
+            id="shop-nav"
+            class="cursor-pointer hover:text-pink-200 transition duration-300"
+            >Shop</a
+          >
+          <a
+            id="cart-nav"
+            class="cursor-pointer hover:text-pink-200 transition duration-300"
+            >Cart</a
+          >
+          <a
+            id="checkout-nav"
+            class="cursor-pointer hover:text-pink-200 transition duration-300"
+            >Checkout</a
+          >
+          <a
+            id="contact-nav"
+            class="cursor-pointer hover:text-pink-200 transition duration-300"
+            >Contact</a
+          >
+        </nav>
+
+        <!-- Action Icons -->
+        <div class="flex items-center gap-5">
+          <a
+            href="/users/user/index.html"
+            class="cursor-pointer text-xl hover:text-pink-200 transition-transform transform hover:scale-110"
+          >
+            <i class="fas fa-user"></i>
+          </a>
+          <a
+            id="cart-nav-btn"
+            class="cursor-pointer relative text-xl hover:text-pink-200 transition-transform transform hover:scale-110"
+          >
+            <i class="fas fa-shopping-bag"></i>
+            <span
+              class="absolute -top-2 -right-2 bg-white text-primary text-xs w-5 h-5 rounded-full flex items-center justify-center"
+              id="cart-count"
+              >0</span
             >
-              <i class="fas fa-user"></i>
-            </div>
-            <div class="col-lg-2 col-md-3 col-12">
-              <div class="right-bar">
-                <!-- Search Form -->
-                <div class="sinlge-bar shopping">
-                  <a href="./cart.html" class="single-icon"
-                    ><i class="ti-bag"></i>
-                    <span class="total-count js-quantity-count">0</span></a
-                  >
-                  <!-- Shopping Item -->
-                  <div class="shopping-item">
-                    <div class="dropdown-cart-header">
-                      <span class="js-quantity">0 Item</span>
-                      <a href="./cart.html">View Cart</a>
-                    </div>
-                    <ul class="shopping-list js-shop-item"></ul>
-                    <div class="bottom">
-                      <div class="total">
-                        <span>Total</span>
-                        <span class="total-amount js-amount">$0.00</span>
-                      </div>
-                      <a href="checkout.html" class="btn animate">Checkout</a>
-                    </div>
-                  </div>
-                  <!--/ End Shopping Item -->
-                </div>
-              </div>
-            </div>
-          </div>
+          </a>
+          <!-- Mobile Toggle -->
+          <button
+            id="mobile-menu-toggle"
+            class="cursor-pointer text-2xl lg:hidden focus:outline-none"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
         </div>
       </div>
-      <!-- Header Inner -->
-      <div class="header-inner">
-        <div class="container">
-          <div class="cat-nav-head">
-            <div class="row">
-              <div class="col-lg-3">
-                <div class="all-category">
-                  <h3 class="cat-heading">
-                    <i class="fa fa-bars" aria-hidden="true"></i>CATEGORIES
-                  </h3>
-                  <ul class="main-category">
-                    <li class="main-mega">
-                      <a
-                        >best selling
-                        <i class="fa fa-angle-right" aria-hidden="true"></i
-                      ></a>
-                      <ul class="mega-menu">
-                        <li class="single-menu">
-                          <a href="./women-product.html" class="title-link"
-                            >Shop Women's</a
-                          >
-                          <div class="image">
-                            <img
-                              src="./images/theme/hero-banner-1.jpg"
-                              alt="#"
-                            />
-                          </div>
-                        </li>
-                        <li class="single-menu">
-                          <a href="./hair-product.html" class="title-link"
-                            >Shop Hair Product</a
-                          >
-                          <div class="image">
-                            <img
-                              src="./images/theme/hero-banner-7.jpg"
-                              alt="#"
-                            />
-                          </div>
-                          <div class="inner-link">
-                            <a href="./hair-product.html">Curly Braid's</a>
-                            <a href="./dress.html">Outing Design's</a>
-                            <a href="./cosmetics.html">Product Care</a>
-                          </div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li>
-                      <a href="./women-product.html">Women’s product</a>
-                    </li>
-                    <li><a href="./hair-product.html">Hairs</a></li>
-                    <li><a href="./dress.html">Unique dress</a></li>
-                    <li><a href="./cosmetics.html">Cosmetics</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-lg-9 col-12">
-                <div class="menu-area">
-                  <!-- Main Menu -->
-                  <nav class="navbar navbar-expand-lg">
-                    <div class="navbar-collapse">
-                      <div class="nav-inner">
-                        <ul class="nav main-menu menu navbar-nav">
-                          <li class="active">
-                            <a>Home</a>
-                          </li>
-                          <li>
-                            <a href="./women-product.html">Women Product</a>
-                          </li>
-                          <li>
-                            <a href="./hair-product.html">Hair Products</a>
-                          </li>
-                          <li>
-                            <a>Shop<i class="ti-angle-down"></i></a>
-                            <ul class="dropdown">
-                              <li>
-                                <a href="./shop.html"
-                                  >Shop<span class="new">New</span></a
-                                >
-                              </li>
-                              <li><a href="./cart.html">Cart</a></li>
-                              <li><a href="./checkout.html">Checkout</a></li>
-                            </ul>
-                          </li>
-                          <li>
-                            <a href="./blog-single-sidebar.html">Blog</a>
-                          </li>
-                          <li><a href="./contact.html">Contact Us</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </nav>
-                  <!--/ End Main Menu -->
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+
+      <!-- Mobile Nav -->
+      <div
+        id="mobile-nav"
+        class="lg:hidden hidden px-4 pt-4 pb-6 bg-primary text-white animate-slide-down"
+      >
+        <nav class="flex flex-col space-y-4 text-sm font-medium">
+          <a
+            id="home-nav-mobile"
+            class="text-secondary cursor-pointer hover:text-pink-200"
+            >Home</a
+          >
+          <a id="women-nav-mobile" class="cursor-pointer hover:text-pink-200"
+            >Women Product</a
+          >
+          <a id="hair-nav-mobile" class="cursor-pointer hover:text-pink-200"
+            >Hair Products</a
+          >
+          <a id="shop-nav-mobile" class="cursor-pointer hover:text-pink-200"
+            >Shop</a
+          >
+          <a id="cart-nav-mobile" class="cursor-pointer hover:text-pink-200"
+            >Cart</a
+          >
+          <a id="checkout-nav-mobile" class="cursor-pointer hover:text-pink-200"
+            >Checkout</a
+          >
+          <a id="contact-nav-mobile" class="cursor-pointer hover:text-pink-200"
+            >Contact</a
+          >
+        </nav>
       </div>
-      <!--/ End Header Inner -->
+
+      <script>
+        document
+          .getElementById("mobile-menu-toggle")
+          .addEventListener("click", function () {
+            const nav = document.getElementById("mobile-nav");
+            nav.classList.toggle("hidden");
+          });
+      </script>
     </header>
-    <!--/ End Header -->
+    <!-- End Wonder Header -->
 
-    <!-- Slider Area -->
-    <section class="hero-slider">
-      <!-- Single Slider -->
-      <div class="single-slider">
-        <div class="container">
-          <div class="row no-gutters">
-            <div class="col-lg-9 offset-lg-3 col-12">
-              <div class="text-inner">
-                <div class="row">
-                  <div class="col-lg-7 col-12">
-                    <div class="hero-text">
-                      <h1><span>UP TO 20% OFF </span>Explore & Experience</h1>
-                      <p>
-                        The Amazing best offers <br />
-                        with reliable lookout,<br />
-                        and remarkable wears to fit our pride.
-                      </p>
-                      <div class="button">
-                        <a href="./shop.html" class="btn">Shop Now!</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--/ End Single Slider -->
-    </section>
-    <!--/ End Slider Area -->
+    <div id="root"></div>
 
-    <!-- Start Small Banner  -->
-    <section class="small-banner section">
-      <div class="container-fluid">
-        <div class="row">
-          <!-- Single Banner  -->
-          <div class="col-lg-4 col-md-6 col-12">
-            <div class="single-banner">
-              <img src="images/theme/hero-banner-2.jpg" />
-              <div class="content">
-                <p>Hair Collections</p>
-                <h3>
-                  Weekend Outing<br />
-                  collection
-                </h3>
-                <a href="./hair-product.html">Discover Now</a>
-              </div>
-            </div>
+    <!-- Footer -->
+    <footer class="bg-gray-950 text-white pt-16 pb-10">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          <!-- About -->
+          <div>
+            <a href="/index.html" class="cursor-pointer inline-block mb-5">
+              <img
+                src="/assets/images/MKSignature.png"
+                alt="Mk Signature"
+                class="h-12"
+              />
+            </a>
+            <p class="text-gray-400 text-sm leading-relaxed mb-4">
+              Explore premium women's fashion and accessories. Shop with ease,
+              earn rewards, and stay confident with every style you wear.
+            </p>
+            <p class="text-sm text-gray-300">
+              <span class="text-white font-semibold">Need Help?</span><br />
+              <a
+                href="tel:+2348101510096"
+                class="block mt-1 text-primary font-medium hover:underline"
+                >+2348101510096</a
+              >
+            </p>
           </div>
-          <!-- /End Single Banner  -->
-          <!-- Single Banner  -->
-          <div class="col-lg-4 col-md-6 col-12">
-            <div class="single-banner">
-              <img src="images/theme/hero-banner-3.jpg" />
-              <div class="content">
-                <p>Dress Collections</p>
-                <h3>
-                  Awesome Dress <br />
-                  2024
-                </h3>
-                <a href="./dress.html">Shop Now</a>
-              </div>
-            </div>
-          </div>
-          <!-- /End Single Banner  -->
-          <!-- Single Banner  -->
-          <div class="col-lg-4 col-12">
-            <div class="single-banner tab-height">
-              <img src="images/theme/hero-banner-4.jpg" />
-              <div class="content">
-                <p>Flash Sale</p>
-                <h3>
-                  Mid Season <br />
-                  Up to <span>20%</span> Off
-                </h3>
-                <a href="./shop.html">Discover Now</a>
-              </div>
-            </div>
-          </div>
-          <!-- /End Single Banner  -->
-        </div>
-      </div>
-    </section>
-    <!-- End Small Banner -->
 
-    <!-- Start Product Area -->
-    <div class="product-area section">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="section-title">
-              <h2>Trending Item</h2>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12">
-            <div class="product-info">
-              <div class="nav-main">
-                <!-- Tab Nav -->
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                  <li class="nav-item">
-                    <a
-                      class="nav-link active"
-                      data-toggle="tab"
-                      href="#women"
-                      role="tab"
-                      id="js-women-single-product-btn"
-                      >Woman</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      class="nav-link"
-                      data-toggle="tab"
-                      href="#hair"
-                      role="tab"
-                      id="js-hair-single-product-btn"
-                      >Hair</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      class="nav-link"
-                      data-toggle="tab"
-                      href="#cosmetics"
-                      role="tab"
-                      id="js-cosmetics-single-product-btn"
-                      >Cosmetics</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      class="nav-link"
-                      data-toggle="tab"
-                      href="#dress"
-                      role="tab"
-                      id="js-dressing-single-product-btn"
-                      >Dressing</a
-                    >
-                  </li>
-                </ul>
-                <!--/ End Tab Nav -->
-              </div>
-              <div class="tab-content" id="myTabContent">
-                <!-- Start Single Tab -->
-                <div
-                  class="tab-pane fade show active"
-                  id="women"
-                  role="tabpanel"
+          <!-- Shop Links -->
+          <div>
+            <h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li>
+                <a id="shop-footer" class="cursor-pointer hover:text-primary"
+                  >Shop Now</a
                 >
-                  <div class="tab-single">
-                    <div class="row" id="js-women-single-product"></div>
-                  </div>
-                </div>
-                <!--/ End Single Tab -->
-                <!-- Start Single Tab -->
-                <div class="tab-pane fade" id="hair" role="tabpanel">
-                  <div class="tab-single">
-                    <div class="row" id="js-hair-single-product"></div>
-                  </div>
-                </div>
-                <!--/ End Single Tab -->
-                <!-- Start Single Tab -->
-                <div class="tab-pane fade" id="cosmetics" role="tabpanel">
-                  <div class="tab-single">
-                    <div class="row" id="js-cosmetics-single-product">
-                      <div class="col-xl-3 col-lg-4 col-md-4 col-12">
-                        <div class="single-product">
-                          <div class="product-img">
-                            <a href="product-details.html">
-                              <img
-                                class="default-img"
-                                src="https://via.placeholder.com/550x750"
-                                alt="#"
-                              />
-                              <img
-                                class="hover-img"
-                                src="https://via.placeholder.com/550x750"
-                                alt="#"
-                              />
-                            </a>
-                            <div class="button-head">
-                              <div class="product-action">
-                                <a
-                                  data-toggle="modal"
-                                  data-target="#exampleModal"
-                                  title="Quick View"
-                                  href="#"
-                                  ><i class="ti-eye"></i
-                                  ><span>Quick Shop</span></a
-                                >
-                                <a title="Wishlist" href="#"
-                                  ><i class="ti-heart"></i
-                                  ><span>Add to Wishlist</span></a
-                                >
-                                <a title="Compare" href="#"
-                                  ><i class="ti-bar-chart-alt"></i
-                                  ><span>Add to Compare</span></a
-                                >
-                              </div>
-                              <div class="product-action-2">
-                                <a title="Add to cart" href="#">Add to cart</a>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="product-content">
-                            <h3>
-                              <a href="product-details.html"
-                                >Women Hot Collection</a
-                              >
-                            </h3>
-                            <div class="product-price">
-                              <span>$29.00</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-xl-3 col-lg-4 col-md-4 col-12">
-                        <div class="single-product">
-                          <div class="product-img">
-                            <a href="product-details.html">
-                              <img
-                                class="default-img"
-                                src="https://via.placeholder.com/550x750"
-                                alt="#"
-                              />
-                              <img
-                                class="hover-img"
-                                src="https://via.placeholder.com/550x750"
-                                alt="#"
-                              />
-                            </a>
-                            <div class="button-head">
-                              <div class="product-action">
-                                <a
-                                  data-toggle="modal"
-                                  data-target="#exampleModal"
-                                  title="Quick View"
-                                  href="#"
-                                  ><i class="ti-eye"></i
-                                  ><span>Quick Shop</span></a
-                                >
-                                <a title="Wishlist" href="#"
-                                  ><i class="ti-heart"></i
-                                  ><span>Add to Wishlist</span></a
-                                >
-                                <a title="Compare" href="#"
-                                  ><i class="ti-bar-chart-alt"></i
-                                  ><span>Add to Compare</span></a
-                                >
-                              </div>
-                              <div class="product-action-2">
-                                <a title="Add to cart" href="#">Add to cart</a>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="product-content">
-                            <h3>
-                              <a href="product-details.html"
-                                >Awesome Pink Show</a
-                              >
-                            </h3>
-                            <div class="product-price">
-                              <span>$29.00</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-xl-3 col-lg-4 col-md-4 col-12">
-                        <div class="single-product">
-                          <div class="product-img">
-                            <a href="product-details.html">
-                              <img
-                                class="default-img"
-                                src="https://via.placeholder.com/550x750"
-                                alt="#"
-                              />
-                              <img
-                                class="hover-img"
-                                src="https://via.placeholder.com/550x750"
-                                alt="#"
-                              />
-                            </a>
-                            <div class="button-head">
-                              <div class="product-action">
-                                <a
-                                  data-toggle="modal"
-                                  data-target="#exampleModal"
-                                  title="Quick View"
-                                  href="#"
-                                  ><i class="ti-eye"></i
-                                  ><span>Quick Shop</span></a
-                                >
-                                <a title="Wishlist" href="#"
-                                  ><i class="ti-heart"></i
-                                  ><span>Add to Wishlist</span></a
-                                >
-                                <a title="Compare" href="#"
-                                  ><i class="ti-bar-chart-alt"></i
-                                  ><span>Add to Compare</span></a
-                                >
-                              </div>
-                              <div class="product-action-2">
-                                <a title="Add to cart" href="#">Add to cart</a>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="product-content">
-                            <h3>
-                              <a href="product-details.html"
-                                >Awesome Bags Collection</a
-                              >
-                            </h3>
-                            <div class="product-price">
-                              <span>$29.00</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-xl-3 col-lg-4 col-md-4 col-12">
-                        <div class="single-product">
-                          <div class="product-img">
-                            <a href="product-details.html">
-                              <img
-                                class="default-img"
-                                src="https://via.placeholder.com/550x750"
-                                alt="#"
-                              />
-                              <img
-                                class="hover-img"
-                                src="https://via.placeholder.com/550x750"
-                                alt="#"
-                              />
-                              <span class="new">New</span>
-                            </a>
-                            <div class="button-head">
-                              <div class="product-action">
-                                <a
-                                  data-toggle="modal"
-                                  data-target="#exampleModal"
-                                  title="Quick View"
-                                  href="#"
-                                  ><i class="ti-eye"></i
-                                  ><span>Quick Shop</span></a
-                                >
-                                <a title="Wishlist" href="#"
-                                  ><i class="ti-heart"></i
-                                  ><span>Add to Wishlist</span></a
-                                >
-                                <a title="Compare" href="#"
-                                  ><i class="ti-bar-chart-alt"></i
-                                  ><span>Add to Compare</span></a
-                                >
-                              </div>
-                              <div class="product-action-2">
-                                <a title="Add to cart" href="#">Add to cart</a>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="product-content">
-                            <h3>
-                              <a href="product-details.html"
-                                >Women Pant Collectons</a
-                              >
-                            </h3>
-                            <div class="product-price">
-                              <span>$29.00</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-xl-3 col-lg-4 col-md-4 col-12">
-                        <div class="single-product">
-                          <div class="product-img">
-                            <a href="product-details.html">
-                              <img
-                                class="default-img"
-                                src="https://via.placeholder.com/550x750"
-                                alt="#"
-                              />
-                              <img
-                                class="hover-img"
-                                src="https://via.placeholder.com/550x750"
-                                alt="#"
-                              />
-                            </a>
-                            <div class="button-head">
-                              <div class="product-action">
-                                <a
-                                  data-toggle="modal"
-                                  data-target="#exampleModal"
-                                  title="Quick View"
-                                  href="#"
-                                  ><i class="ti-eye"></i
-                                  ><span>Quick Shop</span></a
-                                >
-                                <a title="Wishlist" href="#"
-                                  ><i class="ti-heart"></i
-                                  ><span>Add to Wishlist</span></a
-                                >
-                                <a title="Compare" href="#"
-                                  ><i class="ti-bar-chart-alt"></i
-                                  ><span>Add to Compare</span></a
-                                >
-                              </div>
-                              <div class="product-action-2">
-                                <a title="Add to cart" href="#">Add to cart</a>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="product-content">
-                            <h3>
-                              <a href="product-details.html"
-                                >Awesome Bags Collection</a
-                              >
-                            </h3>
-                            <div class="product-price">
-                              <span>$29.00</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-xl-3 col-lg-4 col-md-4 col-12">
-                        <div class="single-product">
-                          <div class="product-img">
-                            <a href="product-details.html">
-                              <img
-                                class="default-img"
-                                src="https://via.placeholder.com/550x750"
-                                alt="#"
-                              />
-                              <img
-                                class="hover-img"
-                                src="https://via.placeholder.com/550x750"
-                                alt="#"
-                              />
-                              <span class="price-dec">30% Off</span>
-                            </a>
-                            <div class="button-head">
-                              <div class="product-action">
-                                <a
-                                  data-toggle="modal"
-                                  data-target="#exampleModal"
-                                  title="Quick View"
-                                  href="#"
-                                  ><i class="ti-eye"></i
-                                  ><span>Quick Shop</span></a
-                                >
-                                <a title="Wishlist" href="#"
-                                  ><i class="ti-heart"></i
-                                  ><span>Add to Wishlist</span></a
-                                >
-                                <a title="Compare" href="#"
-                                  ><i class="ti-bar-chart-alt"></i
-                                  ><span>Add to Compare</span></a
-                                >
-                              </div>
-                              <div class="product-action-2">
-                                <a title="Add to cart" href="#">Add to cart</a>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="product-content">
-                            <h3>
-                              <a href="product-details.html"
-                                >Awesome Cap For Women</a
-                              >
-                            </h3>
-                            <div class="product-price">
-                              <span>$29.00</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-xl-3 col-lg-4 col-md-4 col-12">
-                        <div class="single-product">
-                          <div class="product-img">
-                            <a href="product-details.html">
-                              <img
-                                class="default-img"
-                                src="https://via.placeholder.com/550x750"
-                                alt="#"
-                              />
-                              <img
-                                class="hover-img"
-                                src="https://via.placeholder.com/550x750"
-                                alt="#"
-                              />
-                            </a>
-                            <div class="button-head">
-                              <div class="product-action">
-                                <a
-                                  data-toggle="modal"
-                                  data-target="#exampleModal"
-                                  title="Quick View"
-                                  href="#"
-                                  ><i class="ti-eye"></i
-                                  ><span>Quick Shop</span></a
-                                >
-                                <a title="Wishlist" href="#"
-                                  ><i class="ti-heart"></i
-                                  ><span>Add to Wishlist</span></a
-                                >
-                                <a title="Compare" href="#"
-                                  ><i class="ti-bar-chart-alt"></i
-                                  ><span>Add to Compare</span></a
-                                >
-                              </div>
-                              <div class="product-action-2">
-                                <a title="Add to cart" href="#">Add to cart</a>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="product-content">
-                            <h3>
-                              <a href="product-details.html"
-                                >Polo Dress For Women</a
-                              >
-                            </h3>
-                            <div class="product-price">
-                              <span>$29.00</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-xl-3 col-lg-4 col-md-4 col-12">
-                        <div class="single-product">
-                          <div class="product-img">
-                            <a href="product-details.html">
-                              <img
-                                class="default-img"
-                                src="https://via.placeholder.com/550x750"
-                                alt="#"
-                              />
-                              <img
-                                class="hover-img"
-                                src="https://via.placeholder.com/550x750"
-                                alt="#"
-                              />
-                              <span class="out-of-stock">Hot</span>
-                            </a>
-                            <div class="button-head">
-                              <div class="product-action">
-                                <a
-                                  data-toggle="modal"
-                                  data-target="#exampleModal"
-                                  title="Quick View"
-                                  href="#"
-                                  ><i class="ti-eye"></i
-                                  ><span>Quick Shop</span></a
-                                >
-                                <a title="Wishlist" href="#"
-                                  ><i class="ti-heart"></i
-                                  ><span>Add to Wishlist</span></a
-                                >
-                                <a title="Compare" href="#"
-                                  ><i class="ti-bar-chart-alt"></i
-                                  ><span>Add to Compare</span></a
-                                >
-                              </div>
-                              <div class="product-action-2">
-                                <a title="Add to cart" href="#">Add to cart</a>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="product-content">
-                            <h3>
-                              <a href="product-details.html"
-                                >Black Sunglass For Women</a
-                              >
-                            </h3>
-                            <div class="product-price">
-                              <span class="old">$60.00</span>
-                              <span>$50.00</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!--/ End Single Tab -->
-                <!-- Start Single Tab -->
-                <div class="tab-pane fade" id="dress" role="tabpanel">
-                  <div class="tab-single">
-                    <div class="row" id="js-dressing-single-product">
-                      <div class="col-xl-3 col-lg-4 col-md-4 col-12">
-                        <div class="single-product">
-                          <div class="product-img">
-                            <a href="product-details.html">
-                              <img
-                                class="default-img"
-                                src="https://via.placeholder.com/550x750"
-                                alt="#"
-                              />
-                              <img
-                                class="hover-img"
-                                src="https://via.placeholder.com/550x750"
-                                alt="#"
-                              />
-                            </a>
-                            <div class="button-head">
-                              <div class="product-action">
-                                <a
-                                  data-toggle="modal"
-                                  data-target="#exampleModal"
-                                  title="Quick View"
-                                  href="#"
-                                  ><i class="ti-eye"></i
-                                  ><span>Quick Shop</span></a
-                                >
-                                <a title="Wishlist" href="#"
-                                  ><i class="ti-heart"></i
-                                  ><span>Add to Wishlist</span></a
-                                >
-                                <a title="Compare" href="#"
-                                  ><i class="ti-bar-chart-alt"></i
-                                  ><span>Add to Compare</span></a
-                                >
-                              </div>
-                              <div class="product-action-2">
-                                <a title="Add to cart" href="#">Add to cart</a>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="product-content">
-                            <h3>
-                              <a href="product-details.html"
-                                >Women Hot Collection</a
-                              >
-                            </h3>
-                            <div class="product-price">
-                              <span>$29.00</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-xl-3 col-lg-4 col-md-4 col-12">
-                        <div class="single-product">
-                          <div class="product-img">
-                            <a href="product-details.html">
-                              <img
-                                class="default-img"
-                                src="https://via.placeholder.com/550x750"
-                                alt="#"
-                              />
-                              <img
-                                class="hover-img"
-                                src="https://via.placeholder.com/550x750"
-                                alt="#"
-                              />
-                            </a>
-                            <div class="button-head">
-                              <div class="product-action">
-                                <a
-                                  data-toggle="modal"
-                                  data-target="#exampleModal"
-                                  title="Quick View"
-                                  href="#"
-                                  ><i class="ti-eye"></i
-                                  ><span>Quick Shop</span></a
-                                >
-                                <a title="Wishlist" href="#"
-                                  ><i class="ti-heart"></i
-                                  ><span>Add to Wishlist</span></a
-                                >
-                                <a title="Compare" href="#"
-                                  ><i class="ti-bar-chart-alt"></i
-                                  ><span>Add to Compare</span></a
-                                >
-                              </div>
-                              <div class="product-action-2">
-                                <a title="Add to cart" href="#">Add to cart</a>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="product-content">
-                            <h3>
-                              <a href="product-details.html"
-                                >Awesome Pink Show</a
-                              >
-                            </h3>
-                            <div class="product-price">
-                              <span>$29.00</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-xl-3 col-lg-4 col-md-4 col-12">
-                        <div class="single-product">
-                          <div class="product-img">
-                            <a href="product-details.html">
-                              <img
-                                class="default-img"
-                                src="https://via.placeholder.com/550x750"
-                                alt="#"
-                              />
-                              <img
-                                class="hover-img"
-                                src="https://via.placeholder.com/550x750"
-                                alt="#"
-                              />
-                            </a>
-                            <div class="button-head">
-                              <div class="product-action">
-                                <a
-                                  data-toggle="modal"
-                                  data-target="#exampleModal"
-                                  title="Quick View"
-                                  href="#"
-                                  ><i class="ti-eye"></i
-                                  ><span>Quick Shop</span></a
-                                >
-                                <a title="Wishlist" href="#"
-                                  ><i class="ti-heart"></i
-                                  ><span>Add to Wishlist</span></a
-                                >
-                                <a title="Compare" href="#"
-                                  ><i class="ti-bar-chart-alt"></i
-                                  ><span>Add to Compare</span></a
-                                >
-                              </div>
-                              <div class="product-action-2">
-                                <a title="Add to cart" href="#">Add to cart</a>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="product-content">
-                            <h3>
-                              <a href="product-details.html"
-                                >Awesome Bags Collection</a
-                              >
-                            </h3>
-                            <div class="product-price">
-                              <span>$29.00</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-xl-3 col-lg-4 col-md-4 col-12">
-                        <div class="single-product">
-                          <div class="product-img">
-                            <a href="product-details.html">
-                              <img
-                                class="default-img"
-                                src="https://via.placeholder.com/550x750"
-                                alt="#"
-                              />
-                              <img
-                                class="hover-img"
-                                src="https://via.placeholder.com/550x750"
-                                alt="#"
-                              />
-                              <span class="new">New</span>
-                            </a>
-                            <div class="button-head">
-                              <div class="product-action">
-                                <a
-                                  data-toggle="modal"
-                                  data-target="#exampleModal"
-                                  title="Quick View"
-                                  href="#"
-                                  ><i class="ti-eye"></i
-                                  ><span>Quick Shop</span></a
-                                >
-                                <a title="Wishlist" href="#"
-                                  ><i class="ti-heart"></i
-                                  ><span>Add to Wishlist</span></a
-                                >
-                                <a title="Compare" href="#"
-                                  ><i class="ti-bar-chart-alt"></i
-                                  ><span>Add to Compare</span></a
-                                >
-                              </div>
-                              <div class="product-action-2">
-                                <a title="Add to cart" href="#">Add to cart</a>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="product-content">
-                            <h3>
-                              <a href="product-details.html"
-                                >Women Pant Collections</a
-                              >
-                            </h3>
-                            <div class="product-price">
-                              <span>$29.00</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-xl-3 col-lg-4 col-md-4 col-12">
-                        <div class="single-product">
-                          <div class="product-img">
-                            <a href="product-details.html">
-                              <img
-                                class="default-img"
-                                src="https://via.placeholder.com/550x750"
-                                alt="#"
-                              />
-                              <img
-                                class="hover-img"
-                                src="https://via.placeholder.com/550x750"
-                                alt="#"
-                              />
-                            </a>
-                            <div class="button-head">
-                              <div class="product-action">
-                                <a
-                                  data-toggle="modal"
-                                  data-target="#exampleModal"
-                                  title="Quick View"
-                                  href="#"
-                                  ><i class="ti-eye"></i
-                                  ><span>Quick Shop</span></a
-                                >
-                                <a title="Wishlist" href="#"
-                                  ><i class="ti-heart"></i
-                                  ><span>Add to Wishlist</span></a
-                                >
-                                <a title="Compare" href="#"
-                                  ><i class="ti-bar-chart-alt"></i
-                                  ><span>Add to Compare</span></a
-                                >
-                              </div>
-                              <div class="product-action-2">
-                                <a title="Add to cart" href="#">Add to cart</a>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="product-content">
-                            <h3>
-                              <a href="product-details.html"
-                                >Awesome Bags Collection</a
-                              >
-                            </h3>
-                            <div class="product-price">
-                              <span>$29.00</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-xl-3 col-lg-4 col-md-4 col-12">
-                        <div class="single-product">
-                          <div class="product-img">
-                            <a href="product-details.html">
-                              <img
-                                class="default-img"
-                                src="https://via.placeholder.com/550x750"
-                                alt="#"
-                              />
-                              <img
-                                class="hover-img"
-                                src="https://via.placeholder.com/550x750"
-                                alt="#"
-                              />
-                              <span class="price-dec">30% Off</span>
-                            </a>
-                            <div class="button-head">
-                              <div class="product-action">
-                                <a
-                                  data-toggle="modal"
-                                  data-target="#exampleModal"
-                                  title="Quick View"
-                                  href="#"
-                                  ><i class="ti-eye"></i
-                                  ><span>Quick Shop</span></a
-                                >
-                                <a title="Wishlist" href="#"
-                                  ><i class="ti-heart"></i
-                                  ><span>Add to Wishlist</span></a
-                                >
-                                <a title="Compare" href="#"
-                                  ><i class="ti-bar-chart-alt"></i
-                                  ><span>Add to Compare</span></a
-                                >
-                              </div>
-                              <div class="product-action-2">
-                                <a title="Add to cart" href="#">Add to cart</a>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="product-content">
-                            <h3>
-                              <a href="product-details.html"
-                                >Awesome Cap For Women</a
-                              >
-                            </h3>
-                            <div class="product-price">
-                              <span>$29.00</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-xl-3 col-lg-4 col-md-4 col-12">
-                        <div class="single-product">
-                          <div class="product-img">
-                            <a href="product-details.html">
-                              <img
-                                class="default-img"
-                                src="https://via.placeholder.com/550x750"
-                                alt="#"
-                              />
-                              <img
-                                class="hover-img"
-                                src="https://via.placeholder.com/550x750"
-                                alt="#"
-                              />
-                            </a>
-                            <div class="button-head">
-                              <div class="product-action">
-                                <a
-                                  data-toggle="modal"
-                                  data-target="#exampleModal"
-                                  title="Quick View"
-                                  href="#"
-                                  ><i class="ti-eye"></i
-                                  ><span>Quick Shop</span></a
-                                >
-                                <a title="Wishlist" href="#"
-                                  ><i class="ti-heart"></i
-                                  ><span>Add to Wishlist</span></a
-                                >
-                                <a title="Compare" href="#"
-                                  ><i class="ti-bar-chart-alt"></i
-                                  ><span>Add to Compare</span></a
-                                >
-                              </div>
-                              <div class="product-action-2">
-                                <a title="Add to cart" href="#">Add to cart</a>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="product-content">
-                            <h3>
-                              <a href="product-details.html"
-                                >Polo Dress For Women</a
-                              >
-                            </h3>
-                            <div class="product-price">
-                              <span>$29.00</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-xl-3 col-lg-4 col-md-4 col-12">
-                        <div class="single-product">
-                          <div class="product-img">
-                            <a href="product-details.html">
-                              <img
-                                class="default-img"
-                                src="https://via.placeholder.com/550x750"
-                                alt="#"
-                              />
-                              <img
-                                class="hover-img"
-                                src="https://via.placeholder.com/550x750"
-                                alt="#"
-                              />
-                              <span class="out-of-stock">Hot</span>
-                            </a>
-                            <div class="button-head">
-                              <div class="product-action">
-                                <a
-                                  data-toggle="modal"
-                                  data-target="#exampleModal"
-                                  title="Quick View"
-                                  href="#"
-                                  ><i class="ti-eye"></i
-                                  ><span>Quick Shop</span></a
-                                >
-                                <a title="Wishlist" href="#"
-                                  ><i class="ti-heart"></i
-                                  ><span>Add to Wishlist</span></a
-                                >
-                                <a title="Compare" href="#"
-                                  ><i class="ti-bar-chart-alt"></i
-                                  ><span>Add to Compare</span></a
-                                >
-                              </div>
-                              <div class="product-action-2">
-                                <a title="Add to cart" href="#">Add to cart</a>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="product-content">
-                            <h3>
-                              <a href="product-details.html"
-                                >Black Sunglass For Women</a
-                              >
-                            </h3>
-                            <div class="product-price">
-                              <span class="old">$60.00</span>
-                              <span>$50.00</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!--/ End Single Tab -->
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End Product Area -->
-
-    <!-- Start Medium Banner  -->
-    <section class="midium-banner">
-      <div class="container">
-        <div class="row">
-          <!-- Single Banner  -->
-          <div class="col-lg-6 col-md-6 col-12">
-            <div class="single-banner">
-              <img src="./images/theme/theme-4.png" />
-              <div class="content">
-                <p>Extraordinary Look</p>
-                <h3>Women Hair <br />Up to<span> 20%</span></h3>
-                <a href="./hair-product.html">Shop Now</a>
-              </div>
-            </div>
-          </div>
-          <!-- /End Single Banner  -->
-          <!-- Single Banner  -->
-          <div class="col-lg-6 col-md-6 col-12">
-            <div class="single-banner">
-              <img src="./images/theme/theme-5.jpg" />
-              <div class="content">
-                <p>Dressing Sensation</p>
-                <h3>
-                  mid season <br />
-                  up to <span>10%</span>
-                </h3>
-                <a href="./dress.html" class="btn">Shop Now</a>
-              </div>
-            </div>
-          </div>
-          <!-- /End Single Banner  -->
-        </div>
-      </div>
-    </section>
-    <!-- End Medium Banner -->
-
-    <!-- Start Most Popular -->
-    <div class="product-area most-popular section">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="section-title">
-              <h2>Hot Item</h2>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12">
-            <div class="owl-carousel popular-slider js-trending-product"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End Most Popular Area -->
-
-    <!-- Start Shop Home List  -->
-    <section class="shop-home-list section">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4 col-md-6 col-12">
-            <div class="row">
-              <div class="col-12">
-                <div class="shop-section-title">
-                  <h1>On sale</h1>
-                </div>
-              </div>
-            </div>
-
-            <div class="js-sale-product"></div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-12">
-            <div class="row">
-              <div class="col-12">
-                <div class="shop-section-title">
-                  <h1>Best Seller</h1>
-                </div>
-              </div>
-            </div>
-            <div class="js-best-seller"></div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-12">
-            <div class="row">
-              <div class="col-12">
-                <div class="shop-section-title">
-                  <h1>Top viewed</h1>
-                </div>
-              </div>
-            </div>
-            <div class="js-top-view"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End Shop Home List  -->
-
-    <!-- Start Shop Blog  -->
-    <section class="shop-blog section">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="section-title">
-              <h2>From Our Stories</h2>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6 col-12">
-            <!-- Start Single Blog  -->
-            <div class="shop-single-blog">
-              <div class="content">
-                <div>
-                  <blockquote
-                    class="instagram-media"
-                    data-instgrm-permalink="https://www.instagram.com/p/C7ln8pVNvod/?utm_source=ig_embed&amp;utm_campaign=loading"
-                    data-instgrm-version="14"
-                    style="
-                      background: #fff;
-                      border: 0;
-                      border-radius: 3px;
-                      box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5),
-                        0 1px 10px 0 rgba(0, 0, 0, 0.15);
-                      margin: 1px;
-                      max-width: 540px;
-                      min-width: 326px;
-                      padding: 0;
-                      width: 99.375%;
-                      width: -webkit-calc(100% - 2px);
-                      width: calc(100% - 2px);
-                    "
-                  >
-                    <div style="padding: 16px">
-                      <a
-                        href="https://www.instagram.com/p/C7ln8pVNvod/?utm_source=ig_embed&amp;utm_campaign=loading"
-                        style="
-                          background: #ffffff;
-                          line-height: 0;
-                          padding: 0 0;
-                          text-align: center;
-                          text-decoration: none;
-                          width: 100%;
-                        "
-                        target="_blank"
-                      >
-                        <div
-                          style="
-                            display: flex;
-                            flex-direction: row;
-                            align-items: center;
-                          "
-                        >
-                          <div
-                            style="
-                              background-color: #f4f4f4;
-                              border-radius: 50%;
-                              flex-grow: 0;
-                              height: 40px;
-                              margin-right: 14px;
-                              width: 40px;
-                            "
-                          ></div>
-                          <div
-                            style="
-                              display: flex;
-                              flex-direction: column;
-                              flex-grow: 1;
-                              justify-content: center;
-                            "
-                          >
-                            <div
-                              style="
-                                background-color: #f4f4f4;
-                                border-radius: 4px;
-                                flex-grow: 0;
-                                height: 14px;
-                                margin-bottom: 6px;
-                                width: 100px;
-                              "
-                            ></div>
-                            <div
-                              style="
-                                background-color: #f4f4f4;
-                                border-radius: 4px;
-                                flex-grow: 0;
-                                height: 14px;
-                                width: 60px;
-                              "
-                            ></div>
-                          </div>
-                        </div>
-                        <div style="padding: 19% 0"></div>
-                        <div
-                          style="
-                            display: block;
-                            height: 50px;
-                            margin: 0 auto 12px;
-                            width: 50px;
-                          "
-                        >
-                          <svg
-                            width="50px"
-                            height="50px"
-                            viewBox="0 0 60 60"
-                            version="1.1"
-                            xmlns="https://www.w3.org/2000/svg"
-                            xmlns:xlink="https://www.w3.org/1999/xlink"
-                          >
-                            <g
-                              stroke="none"
-                              stroke-width="1"
-                              fill="none"
-                              fill-rule="evenodd"
-                            >
-                              <g
-                                transform="translate(-511.000000, -20.000000)"
-                                fill="#000000"
-                              >
-                                <g>
-                                  <path
-                                    d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"
-                                  ></path>
-                                </g>
-                              </g>
-                            </g>
-                          </svg>
-                        </div>
-                        <div style="padding-top: 8px">
-                          <div
-                            style="
-                              color: #3897f0;
-                              font-family: Arial, sans-serif;
-                              font-size: 14px;
-                              font-style: normal;
-                              font-weight: 550;
-                              line-height: 18px;
-                            "
-                          >
-                            View this post on Instagram
-                          </div>
-                        </div>
-                        <div style="padding: 12.5% 0"></div>
-                        <div
-                          style="
-                            display: flex;
-                            flex-direction: row;
-                            margin-bottom: 14px;
-                            align-items: center;
-                          "
-                        >
-                          <div>
-                            <div
-                              style="
-                                background-color: #f4f4f4;
-                                border-radius: 50%;
-                                height: 12.5px;
-                                width: 12.5px;
-                                transform: translateX(0px) translateY(7px);
-                              "
-                            ></div>
-                            <div
-                              style="
-                                background-color: #f4f4f4;
-                                height: 12.5px;
-                                transform: rotate(-45deg) translateX(3px)
-                                  translateY(1px);
-                                width: 12.5px;
-                                flex-grow: 0;
-                                margin-right: 14px;
-                                margin-left: 2px;
-                              "
-                            ></div>
-                            <div
-                              style="
-                                background-color: #f4f4f4;
-                                border-radius: 50%;
-                                height: 12.5px;
-                                width: 12.5px;
-                                transform: translateX(9px) translateY(-18px);
-                              "
-                            ></div>
-                          </div>
-                          <div style="margin-left: 8px">
-                            <div
-                              style="
-                                background-color: #f4f4f4;
-                                border-radius: 50%;
-                                flex-grow: 0;
-                                height: 20px;
-                                width: 20px;
-                              "
-                            ></div>
-                            <div
-                              style="
-                                width: 0;
-                                height: 0;
-                                border-top: 2px solid transparent;
-                                border-left: 6px solid #f4f4f4;
-                                border-bottom: 2px solid transparent;
-                                transform: translateX(16px) translateY(-4px)
-                                  rotate(30deg);
-                              "
-                            ></div>
-                          </div>
-                          <div style="margin-left: auto">
-                            <div
-                              style="
-                                width: 0px;
-                                border-top: 8px solid #f4f4f4;
-                                border-right: 8px solid transparent;
-                                transform: translateY(16px);
-                              "
-                            ></div>
-                            <div
-                              style="
-                                background-color: #f4f4f4;
-                                flex-grow: 0;
-                                height: 12px;
-                                width: 16px;
-                                transform: translateY(-4px);
-                              "
-                            ></div>
-                            <div
-                              style="
-                                width: 0;
-                                height: 0;
-                                border-top: 8px solid #f4f4f4;
-                                border-left: 8px solid transparent;
-                                transform: translateY(-4px) translateX(8px);
-                              "
-                            ></div>
-                          </div>
-                        </div>
-                        <div
-                          style="
-                            display: flex;
-                            flex-direction: column;
-                            flex-grow: 1;
-                            justify-content: center;
-                            margin-bottom: 24px;
-                          "
-                        >
-                          <div
-                            style="
-                              background-color: #f4f4f4;
-                              border-radius: 4px;
-                              flex-grow: 0;
-                              height: 14px;
-                              margin-bottom: 6px;
-                              width: 224px;
-                            "
-                          ></div>
-                          <div
-                            style="
-                              background-color: #f4f4f4;
-                              border-radius: 4px;
-                              flex-grow: 0;
-                              height: 14px;
-                              width: 144px;
-                            "
-                          ></div></div
-                      ></a>
-                      <p
-                        style="
-                          color: #c9c8cd;
-                          font-family: Arial, sans-serif;
-                          font-size: 14px;
-                          line-height: 17px;
-                          margin-bottom: 0;
-                          margin-top: 8px;
-                          overflow: hidden;
-                          padding: 8px 0 7px;
-                          text-align: center;
-                          text-overflow: ellipsis;
-                          white-space: nowrap;
-                        "
-                      >
-                        <a
-                          href="https://www.instagram.com/p/C7ln8pVNvod/?utm_source=ig_embed&amp;utm_campaign=loading"
-                          style="
-                            color: #c9c8cd;
-                            font-family: Arial, sans-serif;
-                            font-size: 14px;
-                            font-style: normal;
-                            font-weight: normal;
-                            line-height: 17px;
-                            text-decoration: none;
-                          "
-                          target="_blank"
-                          >A post shared by Mirabel Kamsi (@mk_signasures)</a
-                        >
-                      </p>
-                    </div>
-                  </blockquote>
-                </div>
-              </div>
-            </div>
-            <!-- End Single Blog  -->
-          </div>
-          <div class="col-lg-4 col-md-6 col-12">
-            <!-- Start Single Blog  -->
-            <div class="shop-single-blog">
-              <div class="content">
-                <div>
-                  <blockquote
-                    class="instagram-media"
-                    data-instgrm-permalink="https://www.instagram.com/reel/C8hFGActjoA/?utm_source=ig_embed&amp;utm_campaign=loading"
-                    data-instgrm-version="14"
-                    style="
-                      background: #fff;
-                      border: 0;
-                      border-radius: 3px;
-                      box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5),
-                        0 1px 10px 0 rgba(0, 0, 0, 0.15);
-                      margin: 1px;
-                      max-width: 540px;
-                      min-width: 326px;
-                      padding: 0;
-                      width: 99.375%;
-                      width: -webkit-calc(100% - 2px);
-                      width: calc(100% - 2px);
-                    "
-                  >
-                    <div style="padding: 16px">
-                      <a
-                        href="https://www.instagram.com/reel/C8hFGActjoA/?utm_source=ig_embed&amp;utm_campaign=loading"
-                        style="
-                          background: #ffffff;
-                          line-height: 0;
-                          padding: 0 0;
-                          text-align: center;
-                          text-decoration: none;
-                          width: 100%;
-                        "
-                        target="_blank"
-                      >
-                        <div
-                          style="
-                            display: flex;
-                            flex-direction: row;
-                            align-items: center;
-                          "
-                        >
-                          <div
-                            style="
-                              background-color: #f4f4f4;
-                              border-radius: 50%;
-                              flex-grow: 0;
-                              height: 40px;
-                              margin-right: 14px;
-                              width: 40px;
-                            "
-                          ></div>
-                          <div
-                            style="
-                              display: flex;
-                              flex-direction: column;
-                              flex-grow: 1;
-                              justify-content: center;
-                            "
-                          >
-                            <div
-                              style="
-                                background-color: #f4f4f4;
-                                border-radius: 4px;
-                                flex-grow: 0;
-                                height: 14px;
-                                margin-bottom: 6px;
-                                width: 100px;
-                              "
-                            ></div>
-                            <div
-                              style="
-                                background-color: #f4f4f4;
-                                border-radius: 4px;
-                                flex-grow: 0;
-                                height: 14px;
-                                width: 60px;
-                              "
-                            ></div>
-                          </div>
-                        </div>
-                        <div style="padding: 19% 0"></div>
-                        <div
-                          style="
-                            display: block;
-                            height: 50px;
-                            margin: 0 auto 12px;
-                            width: 50px;
-                          "
-                        >
-                          <svg
-                            width="50px"
-                            height="50px"
-                            viewBox="0 0 60 60"
-                            version="1.1"
-                            xmlns="https://www.w3.org/2000/svg"
-                            xmlns:xlink="https://www.w3.org/1999/xlink"
-                          >
-                            <g
-                              stroke="none"
-                              stroke-width="1"
-                              fill="none"
-                              fill-rule="evenodd"
-                            >
-                              <g
-                                transform="translate(-511.000000, -20.000000)"
-                                fill="#000000"
-                              >
-                                <g>
-                                  <path
-                                    d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"
-                                  ></path>
-                                </g>
-                              </g>
-                            </g>
-                          </svg>
-                        </div>
-                        <div style="padding-top: 8px">
-                          <div
-                            style="
-                              color: #3897f0;
-                              font-family: Arial, sans-serif;
-                              font-size: 14px;
-                              font-style: normal;
-                              font-weight: 550;
-                              line-height: 18px;
-                            "
-                          >
-                            View this post on Instagram
-                          </div>
-                        </div>
-                        <div style="padding: 12.5% 0"></div>
-                        <div
-                          style="
-                            display: flex;
-                            flex-direction: row;
-                            margin-bottom: 14px;
-                            align-items: center;
-                          "
-                        >
-                          <div>
-                            <div
-                              style="
-                                background-color: #f4f4f4;
-                                border-radius: 50%;
-                                height: 12.5px;
-                                width: 12.5px;
-                                transform: translateX(0px) translateY(7px);
-                              "
-                            ></div>
-                            <div
-                              style="
-                                background-color: #f4f4f4;
-                                height: 12.5px;
-                                transform: rotate(-45deg) translateX(3px)
-                                  translateY(1px);
-                                width: 12.5px;
-                                flex-grow: 0;
-                                margin-right: 14px;
-                                margin-left: 2px;
-                              "
-                            ></div>
-                            <div
-                              style="
-                                background-color: #f4f4f4;
-                                border-radius: 50%;
-                                height: 12.5px;
-                                width: 12.5px;
-                                transform: translateX(9px) translateY(-18px);
-                              "
-                            ></div>
-                          </div>
-                          <div style="margin-left: 8px">
-                            <div
-                              style="
-                                background-color: #f4f4f4;
-                                border-radius: 50%;
-                                flex-grow: 0;
-                                height: 20px;
-                                width: 20px;
-                              "
-                            ></div>
-                            <div
-                              style="
-                                width: 0;
-                                height: 0;
-                                border-top: 2px solid transparent;
-                                border-left: 6px solid #f4f4f4;
-                                border-bottom: 2px solid transparent;
-                                transform: translateX(16px) translateY(-4px)
-                                  rotate(30deg);
-                              "
-                            ></div>
-                          </div>
-                          <div style="margin-left: auto">
-                            <div
-                              style="
-                                width: 0px;
-                                border-top: 8px solid #f4f4f4;
-                                border-right: 8px solid transparent;
-                                transform: translateY(16px);
-                              "
-                            ></div>
-                            <div
-                              style="
-                                background-color: #f4f4f4;
-                                flex-grow: 0;
-                                height: 12px;
-                                width: 16px;
-                                transform: translateY(-4px);
-                              "
-                            ></div>
-                            <div
-                              style="
-                                width: 0;
-                                height: 0;
-                                border-top: 8px solid #f4f4f4;
-                                border-left: 8px solid transparent;
-                                transform: translateY(-4px) translateX(8px);
-                              "
-                            ></div>
-                          </div>
-                        </div>
-                        <div
-                          style="
-                            display: flex;
-                            flex-direction: column;
-                            flex-grow: 1;
-                            justify-content: center;
-                            margin-bottom: 24px;
-                          "
-                        >
-                          <div
-                            style="
-                              background-color: #f4f4f4;
-                              border-radius: 4px;
-                              flex-grow: 0;
-                              height: 14px;
-                              margin-bottom: 6px;
-                              width: 224px;
-                            "
-                          ></div>
-                          <div
-                            style="
-                              background-color: #f4f4f4;
-                              border-radius: 4px;
-                              flex-grow: 0;
-                              height: 14px;
-                              width: 144px;
-                            "
-                          ></div></div
-                      ></a>
-                      <p
-                        style="
-                          color: #c9c8cd;
-                          font-family: Arial, sans-serif;
-                          font-size: 14px;
-                          line-height: 17px;
-                          margin-bottom: 0;
-                          margin-top: 8px;
-                          overflow: hidden;
-                          padding: 8px 0 7px;
-                          text-align: center;
-                          text-overflow: ellipsis;
-                          white-space: nowrap;
-                        "
-                      >
-                        <a
-                          href="https://www.instagram.com/reel/C8hFGActjoA/?utm_source=ig_embed&amp;utm_campaign=loading"
-                          style="
-                            color: #c9c8cd;
-                            font-family: Arial, sans-serif;
-                            font-size: 14px;
-                            font-style: normal;
-                            font-weight: normal;
-                            line-height: 17px;
-                            text-decoration: none;
-                          "
-                          target="_blank"
-                          >A post shared by Mirabel Kamsi (@mk_signasures)</a
-                        >
-                      </p>
-                    </div>
-                  </blockquote>
-                </div>
-              </div>
-            </div>
-            <!-- End Single Blog  -->
-          </div>
-          <div class="col-lg-4 col-md-6 col-12">
-            <!-- Start Single Blog  -->
-            <div class="shop-single-blog">
-              <div class="content">
-                <div>
-                  <blockquote
-                    class="instagram-media"
-                    data-instgrm-permalink="https://www.instagram.com/p/C7eEsTFtUsa/?utm_source=ig_embed&amp;utm_campaign=loading"
-                    data-instgrm-version="14"
-                    style="
-                      background: #fff;
-                      border: 0;
-                      border-radius: 3px;
-                      box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5),
-                        0 1px 10px 0 rgba(0, 0, 0, 0.15);
-                      margin: 1px;
-                      max-width: 540px;
-                      min-width: 326px;
-                      padding: 0;
-                      width: 99.375%;
-                      width: -webkit-calc(100% - 2px);
-                      width: calc(100% - 2px);
-                    "
-                  >
-                    <div style="padding: 16px">
-                      <a
-                        href="https://www.instagram.com/p/C7eEsTFtUsa/?utm_source=ig_embed&amp;utm_campaign=loading"
-                        style="
-                          background: #ffffff;
-                          line-height: 0;
-                          padding: 0 0;
-                          text-align: center;
-                          text-decoration: none;
-                          width: 100%;
-                        "
-                        target="_blank"
-                      >
-                        <div
-                          style="
-                            display: flex;
-                            flex-direction: row;
-                            align-items: center;
-                          "
-                        >
-                          <div
-                            style="
-                              background-color: #f4f4f4;
-                              border-radius: 50%;
-                              flex-grow: 0;
-                              height: 40px;
-                              margin-right: 14px;
-                              width: 40px;
-                            "
-                          ></div>
-                          <div
-                            style="
-                              display: flex;
-                              flex-direction: column;
-                              flex-grow: 1;
-                              justify-content: center;
-                            "
-                          >
-                            <div
-                              style="
-                                background-color: #f4f4f4;
-                                border-radius: 4px;
-                                flex-grow: 0;
-                                height: 14px;
-                                margin-bottom: 6px;
-                                width: 100px;
-                              "
-                            ></div>
-                            <div
-                              style="
-                                background-color: #f4f4f4;
-                                border-radius: 4px;
-                                flex-grow: 0;
-                                height: 14px;
-                                width: 60px;
-                              "
-                            ></div>
-                          </div>
-                        </div>
-                        <div style="padding: 19% 0"></div>
-                        <div
-                          style="
-                            display: block;
-                            height: 50px;
-                            margin: 0 auto 12px;
-                            width: 50px;
-                          "
-                        >
-                          <svg
-                            width="50px"
-                            height="50px"
-                            viewBox="0 0 60 60"
-                            version="1.1"
-                            xmlns="https://www.w3.org/2000/svg"
-                            xmlns:xlink="https://www.w3.org/1999/xlink"
-                          >
-                            <g
-                              stroke="none"
-                              stroke-width="1"
-                              fill="none"
-                              fill-rule="evenodd"
-                            >
-                              <g
-                                transform="translate(-511.000000, -20.000000)"
-                                fill="#000000"
-                              >
-                                <g>
-                                  <path
-                                    d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"
-                                  ></path>
-                                </g>
-                              </g>
-                            </g>
-                          </svg>
-                        </div>
-                        <div style="padding-top: 8px">
-                          <div
-                            style="
-                              color: #3897f0;
-                              font-family: Arial, sans-serif;
-                              font-size: 14px;
-                              font-style: normal;
-                              font-weight: 550;
-                              line-height: 18px;
-                            "
-                          >
-                            View this post on Instagram
-                          </div>
-                        </div>
-                        <div style="padding: 12.5% 0"></div>
-                        <div
-                          style="
-                            display: flex;
-                            flex-direction: row;
-                            margin-bottom: 14px;
-                            align-items: center;
-                          "
-                        >
-                          <div>
-                            <div
-                              style="
-                                background-color: #f4f4f4;
-                                border-radius: 50%;
-                                height: 12.5px;
-                                width: 12.5px;
-                                transform: translateX(0px) translateY(7px);
-                              "
-                            ></div>
-                            <div
-                              style="
-                                background-color: #f4f4f4;
-                                height: 12.5px;
-                                transform: rotate(-45deg) translateX(3px)
-                                  translateY(1px);
-                                width: 12.5px;
-                                flex-grow: 0;
-                                margin-right: 14px;
-                                margin-left: 2px;
-                              "
-                            ></div>
-                            <div
-                              style="
-                                background-color: #f4f4f4;
-                                border-radius: 50%;
-                                height: 12.5px;
-                                width: 12.5px;
-                                transform: translateX(9px) translateY(-18px);
-                              "
-                            ></div>
-                          </div>
-                          <div style="margin-left: 8px">
-                            <div
-                              style="
-                                background-color: #f4f4f4;
-                                border-radius: 50%;
-                                flex-grow: 0;
-                                height: 20px;
-                                width: 20px;
-                              "
-                            ></div>
-                            <div
-                              style="
-                                width: 0;
-                                height: 0;
-                                border-top: 2px solid transparent;
-                                border-left: 6px solid #f4f4f4;
-                                border-bottom: 2px solid transparent;
-                                transform: translateX(16px) translateY(-4px)
-                                  rotate(30deg);
-                              "
-                            ></div>
-                          </div>
-                          <div style="margin-left: auto">
-                            <div
-                              style="
-                                width: 0px;
-                                border-top: 8px solid #f4f4f4;
-                                border-right: 8px solid transparent;
-                                transform: translateY(16px);
-                              "
-                            ></div>
-                            <div
-                              style="
-                                background-color: #f4f4f4;
-                                flex-grow: 0;
-                                height: 12px;
-                                width: 16px;
-                                transform: translateY(-4px);
-                              "
-                            ></div>
-                            <div
-                              style="
-                                width: 0;
-                                height: 0;
-                                border-top: 8px solid #f4f4f4;
-                                border-left: 8px solid transparent;
-                                transform: translateY(-4px) translateX(8px);
-                              "
-                            ></div>
-                          </div>
-                        </div>
-                        <div
-                          style="
-                            display: flex;
-                            flex-direction: column;
-                            flex-grow: 1;
-                            justify-content: center;
-                            margin-bottom: 24px;
-                          "
-                        >
-                          <div
-                            style="
-                              background-color: #f4f4f4;
-                              border-radius: 4px;
-                              flex-grow: 0;
-                              height: 14px;
-                              margin-bottom: 6px;
-                              width: 224px;
-                            "
-                          ></div>
-                          <div
-                            style="
-                              background-color: #f4f4f4;
-                              border-radius: 4px;
-                              flex-grow: 0;
-                              height: 14px;
-                              width: 144px;
-                            "
-                          ></div></div
-                      ></a>
-                      <p
-                        style="
-                          color: #c9c8cd;
-                          font-family: Arial, sans-serif;
-                          font-size: 14px;
-                          line-height: 17px;
-                          margin-bottom: 0;
-                          margin-top: 8px;
-                          overflow: hidden;
-                          padding: 8px 0 7px;
-                          text-align: center;
-                          text-overflow: ellipsis;
-                          white-space: nowrap;
-                        "
-                      >
-                        <a
-                          href="https://www.instagram.com/p/C7eEsTFtUsa/?utm_source=ig_embed&amp;utm_campaign=loading"
-                          style="
-                            color: #c9c8cd;
-                            font-family: Arial, sans-serif;
-                            font-size: 14px;
-                            font-style: normal;
-                            font-weight: normal;
-                            line-height: 17px;
-                            text-decoration: none;
-                          "
-                          target="_blank"
-                          >A post shared by Mirabel Kamsi (@mk_signasures)</a
-                        >
-                      </p>
-                    </div>
-                  </blockquote>
-                </div>
-              </div>
-            </div>
-            <!-- End Single Blog  -->
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End Shop Blog  -->
-
-    <!-- Start Shop Services Area -->
-    <section class="shop-services section home">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3 col-md-6 col-12">
-            <!-- Start Single Service -->
-            <div class="single-service">
-              <i class="ti-rocket"></i>
-              <h4>Free shipping</h4>
-              <p>Orders over $100</p>
-            </div>
-            <!-- End Single Service -->
-          </div>
-          <div class="col-lg-3 col-md-6 col-12">
-            <!-- Start Single Service -->
-            <div class="single-service">
-              <i class="ti-reload"></i>
-              <h4>Free Return</h4>
-              <p>Within 30 days returns</p>
-            </div>
-            <!-- End Single Service -->
-          </div>
-          <div class="col-lg-3 col-md-6 col-12">
-            <!-- Start Single Service -->
-            <div class="single-service">
-              <i class="ti-lock"></i>
-              <h4>Secure Payment</h4>
-              <p>100% secure payment</p>
-            </div>
-            <!-- End Single Service -->
-          </div>
-          <div class="col-lg-3 col-md-6 col-12">
-            <!-- Start Single Service -->
-            <div class="single-service">
-              <i class="ti-tag"></i>
-              <h4>Best Price</h4>
-              <p>Guaranteed price</p>
-            </div>
-            <!-- End Single Service -->
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End Shop Services Area -->
-
-    <!-- Start Shop Newsletter  -->
-    <section class="shop-newsletter section">
-      <div class="container">
-        <div class="inner-top">
-          <div class="row">
-            <div class="col-lg-8 offset-lg-2 col-12">
-              <!-- Start Newsletter Inner -->
-              <div class="inner">
-                <h4>Newsletter</h4>
-                <p>
-                  Subscribe to our newsletter and get <span>10%</span> off your
-                  shipping cost
-                </p>
-                <form
-                  method="post"
-                  name="contact-form"
-                  class="newsletter-inner js-newsletter-form"
+              </li>
+              <li>
+                <a id="about-footer" class="cursor-pointer hover:text-primary"
+                  >About Us</a
                 >
-                  <input
-                    name="EMAIL"
-                    placeholder="Your email address"
-                    id="nEmail"
-                    required
-                    type="email"
-                  />
-                  <button type="submit" class="btn">Subscribe</button>
-                </form>
-              </div>
-              <!-- End Newsletter Inner -->
+              </li>
+              <li>
+                <a id="terms-footer" class="cursor-pointer hover:text-primary"
+                  >Terms & Conditions</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Support -->
+          <div>
+            <h3 class="text-lg font-semibold text-white mb-4">Support</h3>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li>
+                <a id="term-footer" class="cursor-pointer hover:text-primary"
+                  >Payment Methods</a
+                >
+              </li>
+              <li>
+                <a id="contact-footer" class="cursor-pointer hover:text-primary"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a id="termp-footer" class="cursor-pointer hover:text-primary"
+                  >Privacy Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div>
+            <h3 class="text-lg font-semibold text-white mb-4">Get In Touch</h3>
+            <ul class="space-y-2 text-sm text-gray-400 mb-4">
+              <li>Shop 52, Igbogo Rd, Choba</li>
+              <li>Port Harcourt, Rivers State</li>
+              <li>
+                <a
+                  href="mailto:mksignasures@gmail.com"
+                  class="hover:text-primary"
+                  >mksignasures@gmail.com</a
+                >
+              </li>
+              <li>
+                <a href="tel:+2348101510096" class="hover:text-primary"
+                  >+2348101510096</a
+                >
+              </li>
+            </ul>
+            <div class="flex gap-4 text-xl">
+              <a
+                href="https://api.whatsapp.com/send/?phone=2348101510096"
+                class="cursor-pointer hover:text-primary transition-transform transform hover:scale-110"
+              >
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/mk_signasures/"
+                class="cursor-pointer hover:text-primary transition-transform transform hover:scale-110"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- End Shop Newsletter -->
 
-    <div class="absolute-div js-absolute hidden"></div>
-
-    <!-- Start Footer Area -->
-    <footer class="footer">
-      <!-- Footer Top -->
-      <div class="footer-top section">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-5 col-md-6 col-12">
-              <!-- Single Widget -->
-              <div class="single-footer about">
-                <div class="logo">
-                  <a href="index.html"><img src="images/MKSignature.png" /></a>
-                </div>
-                <p class="text">
-                  The unique space to shop and get reward for all kinds of women
-                  and hair accessories from the comfort of your home without any
-                  stress.
-                </p>
-                <p class="call">
-                  Got Question? Call us 24/7<span>+2348101510096</span>
-                </p>
-              </div>
-              <!-- End Single Widget -->
-            </div>
-            <div class="col-lg-2 col-md-6 col-12">
-              <!-- Single Widget -->
-              <div class="single-footer links">
-                <h4>Information</h4>
-                <ul>
-                  <li><a href="./shop.html">Shop Now</a></li>
-                  <li><a href="./about-us.html">About Us</a></li>
-                  <li><a href="./terms.html">Terms & Conditions</a></li>
-                  <li><a href="./contact.html">Contact Us</a></li>
-                </ul>
-              </div>
-              <!-- End Single Widget -->
-            </div>
-            <div class="col-lg-2 col-md-6 col-12">
-              <!-- Single Widget -->
-              <div class="single-footer links">
-                <h4>Customer Service</h4>
-                <ul>
-                  <li><a href="./terms.html">Payment Methods</a></li>
-                  <li><a href="./blog-single-sidebar.html">Blog</a></li>
-                  <li><a href="./terms.html">Privacy Policy</a></li>
-                </ul>
-              </div>
-              <!-- End Single Widget -->
-            </div>
-            <div class="col-lg-3 col-md-6 col-12">
-              <!-- Single Widget -->
-              <div class="single-footer social">
-                <h4>Get In Touch</h4>
-                <!-- Single Widget -->
-                <div class="contact">
-                  <ul>
-                    <li>Shop No. 52, Igbogo road Choba Port Harcourt.</li>
-                    <li>Rivers state, Nigeria.</li>
-                    <li>mksignasures@gmail.com</li>
-                    <li>+2348101510096</li>
-                  </ul>
-                </div>
-                <!-- End Single Widget -->
-                <ul>
-                  <li class="link-font">
-                    <a href="https://api.whatsapp.com/send/?phone=2348101510096&text&type=phone_number&app_absent=0">
-                      <i class="fab fa-whatsapp"></i>
-                    </a>
-                  </li>
-                  <li class="link-font">
-                    <a href="https://www.instagram.com/mk_signasures/"><i class="fab fa-instagram"></i></a>
-                  </li>
-                </ul>
-              </div>
-              <!-- End Single Widget -->
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End Footer Top -->
-      <div class="copyright">
-        <div class="container">
-          <div class="inner">
-            <div class="row">
-              <div class="col-lg-6 col-12">
-                <div class="left">
-                  <p>
-                    Copyright © 2024
-                    <a>mksignature</a> - All Rights
-                    Reserved.
-                  </p>
-                </div>
-              </div>
-              <div class="col-lg-6 col-12">
-                <div class="right">
-                  <img src="images/payments.png" />
-                </div>
-              </div>
-            </div>
+        <!-- Footer Bottom -->
+        <div
+          class="mt-12 pt-6 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500"
+        >
+          <p class="text-center md:text-left">
+            &copy; 2025
+            <a href="/index.html" class="text-primary hover:underline font-medium"
+              >Mk Signasures</a
+            >. All rights reserved.
+          </p>
+          <div class="mt-4 md:mt-0">
+            <img
+              src="/assets/images/payments.png"
+              alt="Payment Methods"
+              class="h-6"
+            />
           </div>
         </div>
       </div>
     </footer>
-    <!-- /End Footer Area -->
+    <!-- /End Footer -->
+    <!-- Back to Top Button -->
+    <div class="btp">
+      <button
+        id="backToTop"
+        title="Back to top"
+        class="fixed bottom-6 right-6 z-50 p-3 bg-pink-500 text-white rounded-full shadow-lg hover:bg-pink-600 transition-opacity opacity-0 invisible"
+      >
+        <i class="fas fa-chevron-up text-xl"></i>
+      </button>
+      <script>
+        const backToTopBtn = document.getElementById("backToTop");
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 300) {
+            backToTopBtn.classList.remove("opacity-0", "invisible");
+          } else {
+            backToTopBtn.classList.add("opacity-0", "invisible");
+          }
+        });
+        backToTopBtn.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      </script>
+    </div>
 
-    <!-- Jquery -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery-migrate-3.0.0.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <!-- Popper JS -->
-    <script src="js/popper.min.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Slicknav JS -->
-    <script src="js/slicknav.min.js"></script>
-    <!-- Owl Carousel JS -->
-    <script src="js/owl-carousel.js"></script>
-    <!-- Magnific Popup JS -->
-    <script src="js/magnific-popup.js"></script>
-    <!-- Waypoints JS -->
-    <script src="js/waypoints.min.js"></script>
-    <!-- Countdown JS -->
-    <script src="js/finalcountdown.min.js"></script>
-    <!-- Nice Select JS -->
-    <script src="js/nicesellect.js"></script>
-    <!-- Flex Slider JS -->
-    <script src="js/flex-slider.js"></script>
-    <!-- ScrollUp JS -->
-    <script src="js/scrollup.js"></script>
-    <!-- Onepage Nav JS -->
-    <script src="js/onepage-nav.min.js"></script>
-    <!-- Easing JS -->
-    <script src="js/easing.js"></script>
-    <!-- Active JS -->
-    <script src="js/active.js"></script>
-    <!-- Activate Products -->
-    <script type="module" src="./script/shop/product.js"></script>
-    <script type="module" src="./script/shop/fbase.js"></script>
+    <script type="module" src="/assets/function/Util/preloader.js"></script>
+    <script type="module" src="/assets/function/Routes/route.js"></script>
   </body>
 </html>
