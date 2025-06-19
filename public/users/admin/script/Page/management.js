@@ -61,6 +61,11 @@ style.innerHTML = `
 .animate-zoom-in { animation: zoom-in 0.25s cubic-bezier(.4,0,.2,1); }
 @keyframes fade-in { 0% {opacity:0;} 100% {opacity:1;} }
 .animate-fade-in { animation: fade-in 0.3s cubic-bezier(.4,0,.2,1); }
+@media (max-width: 640px) {
+  .max-w-3xl { max-width: 100% !important; }
+  .p-8 { padding: 1rem !important; }
+  .p-4 { padding: 1rem !important; }
+}
 `;
 document.head.appendChild(style);
 
@@ -220,17 +225,25 @@ export default async function adminManagement(renderPageHTML) {
       `;
     }
 
-    // Helper for variants
+    // Helper for variants (flexible: admin can define any variant name and add/remove options dynamically)
     function renderVariants(variants) {
       return `
-        <div id="variants-list" class="space-y-2 mb-2">
+        <div id="variants-list" class="space-y-4 mb-2">
           ${(variants || []).map((v, idx) => `
-            <div class="flex gap-2 items-center variant-row flex-wrap" data-idx="${idx}">
-              <input type="text" class="variant-type border rounded px-2 py-1 w-full sm:w-1/4" value="${v.type || ""}" placeholder="Type (e.g. Color, Size)" />
-              <input type="text" class="variant-value border rounded px-2 py-1 w-full sm:w-1/4" value="${v.value || ""}" placeholder="Value" />
-              <input type="number" class="variant-price border rounded px-2 py-1 w-full sm:w-1/4" value="${v.price || ""}" placeholder="Price" />
-              <input type="number" class="variant-stock border rounded px-2 py-1 w-full sm:w-1/4" value="${v.stock || ""}" placeholder="Stock" />
-              <button type="button" class="remove-variant text-red-500"><i class="fas fa-times"></i></button>
+            <div class="variant-row bg-pink-50 rounded p-3 mb-2" data-idx="${idx}">
+              <div class="flex flex-col sm:flex-row gap-2 items-center flex-wrap">
+                <input type="text" class="variant-name border rounded px-2 py-1 w-full sm:w-1/3" value="${v.name || ""}" placeholder="Variant Name (e.g. Color, Length, Type)" />
+                <button type="button" class="add-variant-option bg-green-100 text-green-700 px-2 py-1 rounded hover:bg-green-200 transition flex items-center gap-1"><i class="fas fa-plus"></i> Option</button>
+                <button type="button" class="remove-variant text-red-500 px-2 py-1"><i class="fas fa-times"></i></button>
+              </div>
+              <div class="flex flex-wrap gap-2 mt-2 variant-options-list">
+                ${(Array.isArray(v.options) ? v.options : []).map((opt, oidx) => `
+                  <span class="flex items-center bg-green-50 text-green-700 px-2 py-1 rounded text-sm font-semibold">
+                    ${opt}
+                    <button type="button" class="ml-2 text-red-500 remove-variant-option" data-oidx="${oidx}"><i class="fas fa-times"></i></button>
+                  </span>
+                `).join("")}
+              </div>
             </div>
           `).join("")}
         </div>
@@ -367,22 +380,67 @@ export default async function adminManagement(renderPageHTML) {
       };
       mainSection.querySelectorAll(".remove-attribute").forEach(btn => btn.onclick = () => btn.closest(".attribute-row").remove());
 
-      // Variants
+      // Variants (flexible, with dynamic options)
+      function attachVariantEvents() {
+        // Add option to a variant
+        mainSection.querySelectorAll(".add-variant-option").forEach(btn => {
+          btn.onclick = function () {
+            const variantRow = btn.closest(".variant-row");
+            const optionsList = variantRow.querySelector(".variant-options-list");
+            // Show input for new option
+            const inputDiv = document.createElement("div");
+            inputDiv.className = "flex items-center gap-2 mt-2";
+            inputDiv.innerHTML = `
+              <input type="text" class="new-variant-option border rounded px-2 py-1" placeholder="Option value..." />
+              <button type="button" class="save-variant-option bg-green-500 text-white px-2 py-1 rounded hover:bg-green-600">Add</button>
+              <button type="button" class="cancel-variant-option text-gray-400 px-2 py-1">Cancel</button>
+            `;
+            optionsList.appendChild(inputDiv);
+
+            inputDiv.querySelector(".save-variant-option").onclick = () => {
+              const val = inputDiv.querySelector(".new-variant-option").value.trim();
+              if (val) {
+                const span = document.createElement("span");
+                span.className = "flex items-center bg-green-50 text-green-700 px-2 py-1 rounded text-sm font-semibold";
+                span.innerHTML = `${val}<button type="button" class="ml-2 text-red-500 remove-variant-option"><i class="fas fa-times"></i></button>`;
+                optionsList.insertBefore(span, inputDiv);
+                span.querySelector(".remove-variant-option").onclick = () => span.remove();
+              }
+              inputDiv.remove();
+            };
+            inputDiv.querySelector(".cancel-variant-option").onclick = () => inputDiv.remove();
+          };
+        });
+
+        // Remove option from a variant
+        mainSection.querySelectorAll(".remove-variant-option").forEach(btn => {
+          btn.onclick = () => btn.parentElement.remove();
+        });
+
+        // Remove variant row
+        mainSection.querySelectorAll(".remove-variant").forEach(btn => {
+          btn.onclick = () => btn.closest(".variant-row").remove();
+        });
+      }
+
+      // Add new variant row
       mainSection.querySelector("#add-variant-btn").onclick = () => {
         const list = mainSection.querySelector("#variants-list");
         const div = document.createElement("div");
-        div.className = "flex gap-2 items-center variant-row flex-wrap";
+        div.className = "variant-row bg-pink-50 rounded p-3 mb-2";
         div.innerHTML = `
-          <input type="text" class="variant-type border rounded px-2 py-1 w-full sm:w-1/4" placeholder="Type (e.g. Color, Size)" />
-          <input type="text" class="variant-value border rounded px-2 py-1 w-full sm:w-1/4" placeholder="Value" />
-          <input type="number" class="variant-price border rounded px-2 py-1 w-full sm:w-1/4" placeholder="Price" />
-          <input type="number" class="variant-stock border rounded px-2 py-1 w-full sm:w-1/4" placeholder="Stock" />
-          <button type="button" class="remove-variant text-red-500"><i class="fas fa-times"></i></button>
+          <div class="flex flex-col sm:flex-row gap-2 items-center flex-wrap">
+            <input type="text" class="variant-name border rounded px-2 py-1 w-full sm:w-1/3" placeholder="Variant Name (e.g. Color, Length, Type)" />
+            <button type="button" class="add-variant-option bg-green-100 text-green-700 px-2 py-1 rounded hover:bg-green-200 transition flex items-center gap-1"><i class="fas fa-plus"></i> Option</button>
+            <button type="button" class="remove-variant text-red-500 px-2 py-1"><i class="fas fa-times"></i></button>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-2 variant-options-list"></div>
         `;
         list.appendChild(div);
-        div.querySelector(".remove-variant").onclick = () => div.remove();
+        attachVariantEvents();
       };
-      mainSection.querySelectorAll(".remove-variant").forEach(btn => btn.onclick = () => btn.closest(".variant-row").remove());
+
+      attachVariantEvents();
 
       function attachRemoveBtns(type) {
         mainSection.querySelectorAll(`.remove-${type}`).forEach(btn => {
@@ -422,14 +480,13 @@ export default async function adminManagement(renderPageHTML) {
       });
       if (tags.length) attributes.tags = tags;
 
+      // Flexible variants with options
       const variants = [];
       mainSection.querySelectorAll(".variant-row").forEach(row => {
-        const type = row.querySelector(".variant-type").value.trim();
-        const value = row.querySelector(".variant-value").value.trim();
-        const price = Number(row.querySelector(".variant-price").value);
-        const stock = Number(row.querySelector(".variant-stock").value);
-        if (type || value || price || stock) {
-          variants.push({ type, value, price, stock });
+        const name = row.querySelector(".variant-name").value.trim();
+        const options = [...row.querySelectorAll(".variant-options-list span")].map(s => s.childNodes[0].textContent.trim());
+        if (name && options.length) {
+          variants.push({ name, options });
         }
       });
 
