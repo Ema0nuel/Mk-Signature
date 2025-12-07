@@ -25,9 +25,6 @@ const spinnerHTML = `
   </div>
 `;
 
-// Schema for full_description (add to your products table):
-// ALTER TABLE products ADD COLUMN full_description TEXT;
-
 export default async function productDetail(renderPageHTML, productId) {
   startPreloader();
   window.scrollTo(0, 0);
@@ -53,7 +50,6 @@ export default async function productDetail(renderPageHTML, productId) {
 
   // Defensive: always arrays
   const images = Array.isArray(product.images) ? product.images : [];
-  const variants = Array.isArray(product.variants) ? product.variants : [];
   const tags =
     Array.isArray(product.categories) && product.categories.length > 0
       ? product.categories
@@ -61,28 +57,15 @@ export default async function productDetail(renderPageHTML, productId) {
         ? product.tags
         : [];
 
-  // Collect all variant keys (e.g. size, color)
-  let variantKeys = [];
-  variants.forEach((v) => {
-    Object.keys(v).forEach((k) => {
-      if (!variantKeys.includes(k) && !["stock", "price"].includes(k)) {
-        variantKeys.push(k);
-      }
-    });
-  });
-
-  // Build variant options for selects
-  const variantOptions = {};
-  variantKeys.forEach((key) => {
-    variantOptions[key] = [
-      ...new Set(variants.map((v) => v[key]).filter(Boolean)),
-    ];
-  });
-
-  // Default variant selection (first available)
-  const defaultVariant = {};
-  variantKeys.forEach((key) => {
-    defaultVariant[key] = variantOptions[key][0];
+  // --- Flexible Variant Logic ---
+  // product.variants = [{ name: "Length", options: ["1cm", "2cm", "3cm"] }, ...]
+  const variants = Array.isArray(product.variants) ? product.variants : [];
+  // Build variant selection state
+  const variantSelections = {};
+  variants.forEach(v => {
+    if (Array.isArray(v.options) && v.options.length > 0) {
+      variantSelections[v.name] = v.options[0];
+    }
   });
 
   // Stock logic
@@ -116,26 +99,29 @@ export default async function productDetail(renderPageHTML, productId) {
       .join("");
   }
 
-  // Render variant selectors
+  // Render variant selectors (flexible)
   function renderVariantSelectors() {
-    if (!variantKeys.length) return "";
+    if (!variants.length) return "";
     return `
       <div class="mb-4">
         <h4 class="text-sm text-gray-800 font-semibold mb-2">Choose Options</h4>
         <div class="flex flex-col gap-2">
-          ${variantKeys
+          ${variants
         .map(
-          (key) => `
+          (variant) => `
             <div>
-              <label class="font-semibold capitalize">${key}:</label>
-              <select name="variant-${key}" class="variant-select border rounded px-2 py-1 ml-2 focus:ring-2 focus:ring-pink-400">
-                ${variantOptions[key]
-              .map(
-                (val) =>
-                  `<option value="${val}" ${val === defaultVariant[key] ? "selected" : ""
-                  }>${val}</option>`
-              )
-              .join("")}
+              <label class="font-semibold capitalize">${variant.name}:</label>
+              <select name="variant-${variant.name}" class="variant-select border rounded px-2 py-1 ml-2 focus:ring-2 focus:ring-pink-400">
+                ${Array.isArray(variant.options)
+              ? variant.options
+                .map(
+                  (val, idx) =>
+                    `<option value="${val}" ${idx === 0 ? "selected" : ""
+                    }>${val}</option>`
+                )
+                .join("")
+              : ""
+            }
               </select>
             </div>
           `
@@ -260,12 +246,6 @@ export default async function productDetail(renderPageHTML, productId) {
             <h3 class="text-lg font-bold mb-2">Product Description</h3>
             <p class="text-gray-700 mb-4">${product.description || "No description available."
     }</p>
-            <ul class="list-disc ml-6 text-gray-600">
-              <li>High quality and durable</li>
-              <li>Modern design</li>
-              <li>Fast delivery</li>
-              <li>Best for you</li>
-            </ul>
             ${renderAttributes()}
           </div>
           <div id="tab-reviews" class="tab-content hidden">
@@ -292,7 +272,7 @@ export default async function productDetail(renderPageHTML, productId) {
               ${product.full_description ? product.full_description : `<span class="text-gray-400">No details available.</span>`}
             </div>
           </div>
-        </div>
+          <div>
       </div>
     </section>
   `;
@@ -354,11 +334,11 @@ export default async function productDetail(renderPageHTML, productId) {
     const qty = Math.max(1, Math.min(100, Number(quantityInput.value) || 1));
     // Collect selected variants
     const selectedVariants = {};
-    variantKeys.forEach((key) => {
+    variants.forEach((variant) => {
       const select = renderPageHTML.querySelector(
-        `select[name="variant-${key}"]`
+        `select[name="variant-${variant.name}"]`
       );
-      selectedVariants[key] = select ? select.value : defaultVariant[key];
+      selectedVariants[variant.name] = select ? select.value : (Array.isArray(variant.options) ? variant.options[0] : "");
     });
     if (!inStock) {
       showNotification("Product is out of stock. Delivery may take longer than usual.", "warning");
